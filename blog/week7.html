@@ -94,7 +94,10 @@
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
                 <p>
-                    Hello World! Replace XKCD WITH SCREENSHOT and replace text with group blog
+                    Over the course of this week, we fixed up and integrated many of the features we were working on from last week. AI and decals have been merged in, the server serialization code was redone so that component data can be sent to clients (allowing the new gameplay features to work on the server side and allow us to optimize the amount of data we send [only variables that changed]), and the level loader now correctly imports transformations, hierarchy data, colliders, and even animations. As a result, we now have a level you can run around in as an actual character from the game.
+                    <br>
+                    For next week, we plan to get the later levels done with all their components wired up so that we can start demoing the game, while continuing to improve on our graphics, menus, and other features.
+                    <br>
                 </p>
             </div>
             <div class="col-sm-2"></div>
@@ -116,34 +119,28 @@
                 <div class="col-sm-12">
                     <h2 class="text-center">Alex Hawker</h2>
                     <p>
-                        Nulla vehicula ultricies aliquam. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Integer efficitur enim lacus, vitae
-                        pretium neque tempus eu. Vestibulum eu est ac ante vulputate elementum.
-                        Nullam non diam fermentum, posuere turpis eu, vehicula turpis. Suspendisse
-                        nunc dui, vehicula sit amet accumsan sed, pellentesque maximus turpis.
-                        Suspendisse aliquet, ipsum non lacinia aliquam, tortor risus hendrerit lorem,
-                        ac ullamcorper diam nunc volutpat dui. Ut malesuada at metus in facilisis.
-                        Curabitur viverra maximus diam vitae fermentum. Pellentesque viverra tellus et ante ultricies,
-                        a lobortis arcu mollis.
+                        For this week, I had planned to do SSAO, Crespular Rays, Foliage Rendering and perhaps a bit on Cloth Simulation. Instead, I pivoted my focus to the scene loader and animations. The scene loader now properly handles transforms and parenting (thank you to Stephen for his help figuring out the right rotation and tracking down a very elusive bug), components are able to be loaded properly, old loading methods were cleaned up, and we can more easily load in animations now (which also now have root motion!) Along the way, I made several optimizations to the graphics (e.g. fixed no stencil buffer for the point light speedup, avoided updating perspective matrix unnecessarily on FBO switch, etc.). I also fixed up decals (normals now work in all directions) and added some profiling code.
+                        <br>
+                        Goals for next week are to get to SSAO and hopefully Cloth Physics, add Animation Blending (smoothly play between two animations), and help with general polish. My morale is pretty high, as we actually have characters now and should be able to start testing over the course of next week!
+                        <br>
                     </p>
                 </div>
             </div>
         </div>
-        <!--Alex Hawker-->
+        <!--Ara-->
         <div class="row">
             <div class="person-text">
                 <div class="col-sm-12">
                     <h2 class="text-center">Ara Jermakyan</h2>
                     <p>
-                        Nulla vehicula ultricies aliquam. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Integer efficitur enim lacus, vitae
-                        pretium neque tempus eu. Vestibulum eu est ac ante vulputate elementum.
-                        Nullam non diam fermentum, posuere turpis eu, vehicula turpis. Suspendisse
-                        nunc dui, vehicula sit amet accumsan sed, pellentesque maximus turpis.
-                        Suspendisse aliquet, ipsum non lacinia aliquam, tortor risus hendrerit lorem,
-                        ac ullamcorper diam nunc volutpat dui. Ut malesuada at metus in facilisis.
-                        Curabitur viverra maximus diam vitae fermentum. Pellentesque viverra tellus et ante ultricies,
-                        a lobortis arcu mollis.
+                        This past week’s improvements instantly surfaced the flaws of our communication between client and server. Any sort of transformation or event triggering on the server side had no real way of being activated on the client side, especially since the only real thing being sent over was the transform tree and player controls.
+                        This weeks goals were to tackle refactoring our communication protocols, and integrating all of our changes onto this new methodology. This new method involved sending deltas to specific objects that had updates.Before, the objects were only accessible through traversing the tree hierarchy; now we created an index table to allow direct access to update. In addition, we added a check to determine if a delta has been applied to each object to determine whether to serialize the data or not. This solved two problems: reducing the footprint of the tree (rather than sending transforms for a 100 objects of which 99 were unmoving, we will only send 1), and allowing direct access to the game objects. On top of these transforms, we enabled functionality to serialize each objects components. With this in place, any component that needs to be serialized can easily implement the necessary methods and automatically be included.
+                        With all of this in place, we needed to merge everyone’s code together. AI integrated seemlessly. Currently the branch with the scene loader has introduced some new bugs in terms of non-functioning gameplay, but the core basic movement still works in the client/server model.
+                        Due to timelining, we did not get enough time to completely merge this new branch for this week, and thus will be pushed to next week.
+                        Next week’s plans involves cleaning up any loose ends on client/server integration, and beginning to assist with component creation in Unity, so custom made components will automatically be available when the scene is loaded.
+                        <br>
+                        Seeing the game with all of its models/textures running with server/client integration was really the highlight of the week. Morale is very high.
+                        <br>
                     </p>
                 </div>
             </div>
@@ -205,15 +202,14 @@
                 <div class="col-sm-12">
                     <h2 class="text-center">Justin Chou</h2>
                     <p>
-                        Nulla vehicula ultricies aliquam. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Integer efficitur enim lacus, vitae
-                        pretium neque tempus eu. Vestibulum eu est ac ante vulputate elementum.
-                        Nullam non diam fermentum, posuere turpis eu, vehicula turpis. Suspendisse
-                        nunc dui, vehicula sit amet accumsan sed, pellentesque maximus turpis.
-                        Suspendisse aliquet, ipsum non lacinia aliquam, tortor risus hendrerit lorem,
-                        ac ullamcorper diam nunc volutpat dui. Ut malesuada at metus in facilisis.
-                        Curabitur viverra maximus diam vitae fermentum. Pellentesque viverra tellus et ante ultricies,
-                        a lobortis arcu mollis.
+                        This past week we hoped to update and modify our existing server/client networking code to send not just the transforms of the game objects but also serialize and apply information of various components such as sounds and lights such that it can be synonymous across all clients as well as support specific client component triggering. This issue arose when trying to trigger a 2d sound for all clients to hear and we realized that it was not possible as we are not sending that info (the sound was technically triggered to play on just the server). In addition, we hoped to integrate as many gameplay changes with the server as possible.
+                        <br>
+                        We were able to revamp the way we were sending server/client data and am able to trigger specific events on client from server. This involved saving a dictionary of game objects indexed by their id’s on both server and client. Server would go through all the game objects and send only data that has changed. Furthermore, we integrated the other gameplay branches including AI and door events. We also worked to get a server game scene reload functionality but ran into many blockers/stack overflow errors that need to be resolved.
+                        <br>
+                        For next week, we hope to have server and event components integrated with the newly developed game loader. In addition, we hope to get familiar with unity so that we can create prefabs of our gameplay objects so that we can easily create new levels.
+                        <br>
+                        My morale is great. Seeing John’s assets and models load into our game was really amazing.
+                        <br>
                     </p>
                 </div>
             </div>
@@ -224,15 +220,18 @@
                 <div class="col-sm-12">
                     <h2 class="text-center">Stephen Trinh</h2>
                     <p>
-                        Nulla vehicula ultricies aliquam. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Integer efficitur enim lacus, vitae
-                        pretium neque tempus eu. Vestibulum eu est ac ante vulputate elementum.
-                        Nullam non diam fermentum, posuere turpis eu, vehicula turpis. Suspendisse
-                        nunc dui, vehicula sit amet accumsan sed, pellentesque maximus turpis.
-                        Suspendisse aliquet, ipsum non lacinia aliquam, tortor risus hendrerit lorem,
-                        ac ullamcorper diam nunc volutpat dui. Ut malesuada at metus in facilisis.
-                        Curabitur viverra maximus diam vitae fermentum. Pellentesque viverra tellus et ante ultricies,
-                        a lobortis arcu mollis.
+                        My goals for the week were to continue the development of the AI and the design of the set pieces.
+                        <br>
+                        To start off, I got side-tracked by higher priority tasks that arose such as getting our scene loader from Unity working. Alex and I spent quite a bit of time trying to debug what was wrong with our scene loader, and we were able to eventually figure it out. It was a combination of two things: the way we were changing from a left-handed coordinate system in Unity to our right-handed one, and the colliders in our engine incorrectly using the world positions to set the local positions of its game object. Debugging is fuuun!
+                        <br>
+                        The AI hasn’t really been worked on that much. The only thing I really did was fix the cases where the AI might traverse off the navmesh (causing it to just be stuck outside), and when the player being chased ends up off the navmesh (causing the AI to stop moving until the player walked back in). The fix was, for the first, to move the AI back into the navmesh and, for the second, to have the AI move to the closest spot on the navmesh to the player.
+                        <br>
+                        I’m relatively happy with how the design of the set pieces is going. I feel like the ideas we have in mind for the environment/architecture will make for some great “wow!” moments. The main issue I’m still stuck on is the fact that progression is directly tied to a scarce resource, the player’s health. Making the resource not so scarce takes away the tension of being hurt, and leaving it like it is restricts the design space I can work with because of the possibility of deadlocks. I feel like the answer is to separate the gameplay into two phases, fast and slow. The fast phases are the ones we had in mind at the beginning, where the players make their way through a maze while being hunted by the AI. The slow phases are the ones where the players solve a simple puzzle to progress further into the dungeon. The separation allows us to make having the ability to sing inessential to progression in fast areas to maintain tension (since we don’t have to heal players), while giving free reign to heal players in slow areas so they can progress.
+                        <br>
+                        For the next week, I want to get at least the layout of the first set piece done. I’m hopeful that we can even get in the gameplay/interactive bits in as well.
+                        <br>
+                        We’ve been on the cusp of being able to make a complete level for a while now, and I think we’re actually going to hit the tipping point by this weekend. So that’s exciting. I’m ready to get some playtesting in. I’ll give this week a dragon fruit and some dark red cherries. And more of whatever’s got vitamin C.
+                        <br>
                     </p>
                 </div>
             </div>
