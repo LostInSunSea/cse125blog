@@ -1,10 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Week 2/3</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="../css/main.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
-<body>
+
+<body id="page-top" class="index">
+<div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
+<!-- Navigation -->
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="#page-top">TEAM 4: A42JS</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#group-blog">Group Blog</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#blog">Blog</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#book-report">Book Report</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header>
+    <div class="container" id="maincontent" tabindex="-1">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>WEEK 2/3</h2>
+                <hr class="star-light">
+            </div>
+        </div>
+        <div class="row">
+            <img  class="img-responsive center-block" src="https://imgs.xkcd.com/comics/code_quality.png">
+        </div>
+    </div>
+</header>
+<!-- Group Blog -->
+<section id="group-blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Group Blog</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <!--Place Screenshot Here-->
+        <div class="row">
+            <img  class="img-responsive center-block" src="../img/screenshots/Week3Screenshots.png">
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <p>
+                    These first few weeks have been spent getting the foundation ready for our game, so that we can begin to quickly iterate on the gameplay and add improvements to the core aspects of the engine (e.g. graphics, networking, audio). Specifically, we have our core renderer almost fully operational, have integrated basic (client-side) controls, have client/server communication working, a working audio engine with positional sound, and have established a general look for things in the game. While we are slightly behind our goals for Week 3, we’ve already accomplished quite a bit and feel that we should be in a good position for the next few weeks, in which our main focus will be developing the gameplay elements and graphical assets (while further refining the core engine).
+                    <br>
+                    Group morale is pretty high right now, as we’re starting to get into a good rhythm and feel our progress is going well so far. We’re excited to see what we can do on the road ahead.
+                    <br>
+                </p>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+</section>
+<!--Blog-->
+<section id="blog" class="success">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Blog</h2>
+                <hr class="star-light">
+            </div>
+        </div>
+        <!--Alex Hawker-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Alex Hawker</h2>
+                    <p>
+                        My goals for the start of the quarter were to get the graphics engine ported to Javascript / WebGL and working correctly.
+                        <br>
+                        I got most of the graphics engine working, barring Deferred Rendering, Directional Light Shadows, Particles, and a few other minor features.
+                        <br>
+                        A lot of the porting work took a lot longer than I expected, as a lot of stuff had to be changed going from C++ to Javascript (e.g. no types, different structure for Classes / Static / Singletons, etc.) Furthermore, there were some issues with nice new desktop OpenGL functions being unavailable on WebGL. Fortunately, it seems WebGL2.0 is quite widely available so we can use that to get most necessary items (e.g. multiple render targets for deferred), but there are some nice to have features (e.g. DSA) that aren’t available, and some things that had to be changed around to work. Finally, there were also some delays from getting setup and a mistake in my animation code that took a while to find, but thankfully these have been resolved.
+                        <br>
+                        For next week, my goals are to finish the last remaining tasks to port over (Deferred Rendering & Shadows), get an offline cubemap convolver working to easily simulate roughness (most likely AMD cubemapgen), setup code for Point light shadows and Particle Systems (might do something a little different this time), and get started on SSAO and Deferred Decals.
+                        <br>
+                        I learned a lot about how to code javascript in ES6 (e.g. Classes), as I the last time I used javascript it wasn’t available and so used the module pattern. Also brushed up my regex skills to solve a problem, and learned I could use it to do some really nice find/replace stuff in the IDE, which was something I didn’t expect but is really nice.
+                        <br>
+                        My individual morale is pretty high - while a little bit behind from our schedule, the graphics are looking pretty good already and having animation working is very encouraging, especially combine with everyone else’s work turning out really nicely!
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--Ara-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Ara Jermakyan</h2>
+                    <p>
+                        The goals I had for this week revolved on integration of a backend with the graphics engine. We wanted to have basic communication between server and client, and begin to get logic working on the backend.
+                        <br>
+                        For networking, Arno, Justin, and I  were able to get a basic express server up and running through node, with socket.io library for the actual communications. We created a sample chat app where multiple clients can “chat” each other for a proof of concept. Once we had this PoC, we needed to create a game loop, along with event buffers for input and output. We set our loop to run at 30FPS, and thus synchronized batch input and output for the communication channels.
+                        <br>
+                        Finally, we worked with the actual client graphics engine to get it hooked into our backend. This proved to be simple task since we just wanted basic game information to be sent to the server, and an acknowledgment sent to the client. To get actual logic working, we need to generate the game models on the backend. This task took much longer than expected, and thus is still in progress.
+                        <br>
+                        For the next week, I wish to have a fully functional server where the game models on the backend are dictating the clients, as well as assist my teammates with any tasks in any way.
+                        <br>
+                        My morale is great, since everyone on the team is highly motivated to work on this. Our workflow solidified fairly quickly, and everything seems to becoming more productive as time goes by.
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--Arno-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Arno Gao</h2>
+                    <p>
+                        What I did:
+                        I was able to setup my dev environment for js with es6 and node. I went through the tutorials for how to use socketio for networking and helped set up the structure of our networking code, the formatting, and documentation with in line comments. Our current code can send messages and is integrated with Alex's js port of his c++ engine.
+                        <br>
+                        My tarnished hopes and dreams:
+                        I wanted to hopefully set up or plan out a nice network interface/api for the engine to use. At the moment, because I dont have very much experience in how these work, it seems that Im only going to be able to figure out whats needed in an interface by winging it and learning from my mistakes.
+                        <br>
+                        My new hopes and dreams:
+                        I hope to contribute more with the integration of basic control input from client to server. I also hope to pick up cannonjs, the library we chose to do physics. And I would like to help Stephen out more with the designs. As always, I wouldve liked to do more work.
+                        <br>
+                        Morale:
+                        Solid
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--Sunny-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Austin Sun</h2>
+                    <p>
+                        During this week, my plan was to get the audio engine completely set up and integrated with the game engine. While there are still some minor issues with integration it seems to work and we have working 3d positional audio with some basic controls, with more to come as needed. I was not able to get the random pitch and reverb nodes working as the html5 audio api support for such is spotty at best or nonexistent and thus those will have to be done in external software. My plans for next week are to help out with whatever game code is needed and to start composing music for the game and collecting sounds and animations with the Kinect. My morale is good and stress is due to primarily outside issues not dealing with classes or code.
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--ArtMan-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">John Pellag</h2>
+                    <p>
+                        My goals were both in art and programming.  In relation to art, this week I wanted to gather a fair amount of concept art, collect a number of assets I have, create plans for modeling and level design, create an initial look and feel for the game, create a demo scene for rendering in our game engine, design the monster and start the main character designs.  For programming, I wanted to help define the Input class for keyboard and mouse input and be able to export 3D scenes using assimp2JSON.
+                        <br>
+                        I was able to accomplish all of my programming goals and most of my art goals.  In terms of planning, we now have a Google Drive folder of concept art, a number of collected assets, and a rough idea of the modeling plan. Creating the demo and the enemy helped define what the game is going to “feel” like.
+                        <br>
+                        I did not get as much of the primary character work done this week as I would have liked.  I spent more time on the demo scene and monster but I think it was time well deserved.  I also ended up going with a very different look for the monster and the research involved in doing so took more time than I was originally anticipating.  I also would have liked to have fully seen the demo scene rendered, but it is extremely shiny in our game as of right now.
+                        <br>
+                        Next week, I hope to have much of the character design work done, many primary level-building components, be able to load the monster and characters in game, create preliminary animations for testing, and help define the final JSON scene format.
+                        <br>
+                        This week, I learned that large, brutish monsters are not as scary or creepy as vaguely humanoid things.  I also learned that pointer lock in Javascript causes mouse move events to not behave like they normally do (found out while helping Stephen on mouse Input)
+                        <br>
+                        My morale is high.  I’m enjoying working with this team thus far and excited by the initial graphics engine.  I was not happy with the original monster idea and am liking it’s design much more now.
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--JC-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Justin Chou</h2>
+                    <p>
+                        My goals for the week were to work on the networking and the server. In addition, I wanted to look into and familiarize myself with our physics engine, Cannon.js. For networking I hoped to accomplish a tcp socket connection via Socket.io that is able to receive and send messages. As for the server, I wanted to set up networking as well as have the basic game loop incorporated.
+                        <br>
+                        I was able to accomplish my goals on networking and the server. I worked together with Ara and Arno to set up an Express + Node.js project and integrated Socket.io. Ara and I utilized pair programming in the development of the game loop and supported him while he deployed onto Austin’s server. Ara and I worked with Stephen to incorporate the networking code onto the client and successful incorporated communication with the server.
+                        <br>
+                        I was not able to get as much done with Cannon.js as I had hoped. I was only able to read over the basic documentation and played with the starter code.
+                        <br>
+                        For next week I hope to work with my teammates and fully integrate the game scene onto the server. This will allow the server to become the central authority in our game. In addition, I hope to make additional progress on physics.
+                        <br>
+                        My morale is good as I am working with many bright individuals in creating a great game. I learned a lot about how a game is structured and the responsibilities of the various parts of the game.
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--ST-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Stephen Trinh</h2>
+                    <p>
+                        My main goals for the week were to implement basic WASD and mouse controls, to integrate a physics engine (cannon.js) with our engine, and to further develop the gameplay.
+                        <br>
+                        For the controls, I was successfully able to recreate the basic 3rd person controls. The WASD moves the player character in the proper direction relative to the camera’s forward, and the mouse orbits the camera around the player character while making sure the player can’t over rotate the pitch so as to cause the yaw rotations to become inverted. Some of the 3D math was particularly vexing, but with some help from Alex, I was able to get it done. As of now in the master branch, the WASD is currently only translating the player character along a flat plane and will need to be changed to work with the physics engine.
+                        <br>
+                        Integrating the physics engine, cannon.js, with our engine is proving to be alright but troubling. I was able to get gravity going as well as simple box collisions, but the issue is that manually creating the collision shapes in cannon.js doesn’t work that well and will take a lot of time in the future given that our level will be particularly large. There is hope however that there is a way to be able to automatically create these collision shapes on top of models created in Blender. (I really hope there is.)
+                        <br>
+                        Gameplay design has been going relatively smoothly with the core mechanics being almost fully fleshed out. We decided to do away with having each unique note interact with the environment in ways exclusive to the other notes in favor of having each note perform the same interactions. This decision was made to limit the complexity of the gameplay and, consequently, to ease the learning curve for the players. We do, however, still plan to have each character have a unique note that sound different from each other in order to retain the interactions between notes based on whether the notes harmonize or not.
+                        <br>
+                        In the next week, my goals are to finalize the integration of the physics by being able to merge it with the master, work on the singing interactions, and finish developing the core game mechanics.
+                        <br>
+                        This last week has been pretty good for me. I was expecting more of a fight from the physics engine but that wasn’t the case. So that’s nice. I’ve also been pretty happy with the way the game design is turning out. One thing I still need to work on learning though is 3D math. I’m still not very good at it. Overall, I’d give my morale one mango and a handful of grapes.
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="book-report">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <marquee><h1>Tim's Book Report</h1></marquee>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+            <p>
+                A few weeks back, Accipiter Chalybs lent me book one of The Wheel of Time series, The Eye of the World, by Robert Jordan. The prologue was a great start, setting up some intrigue and backstory of what happened in the world, even though the reader is left in the dark for many important details.
+                <br>
+                To give a quick summary of what I read so far. The story starts with Rand, our protagonist, delivering cider to a nearby village with his father, Tam. He sees a mysterious man on horseback following him and Rand felt something sinister from him. When they arrive to the village, we are introduced to many new characters. Mat, Rand’s childhood friend and mischief maker. Perrin, the blacksmith’s son. Nynaeve, the village Wisdom, who plays a role of some kind of authority in the village that is not clear yet. Egwene, the mayor’s daughter who Rand appears to fancy. As well as a few newcomers to the village. Fain, a peddler who also brings news of war outside the village, which panics the residents. Thom, a Gleeman, which seems to be similar to a bard of some sort. Moriane, who is later revealed to be an Aes Sedai, a group of some sort that opposes the dark forces and may have had a role in ruining the world a long time ago. Her companion, Lan, a Warder, which seems to be some kind of knight that is partnered with an Aes Sedai.
+                <br>
+                Long story short, the village and Rand’s farm was attacked and they need to leave. And so Rand, Mat, Perrin, Egwene, Thom, Moriane, and Lan go on journey to somewhere safer.
+                <br>
+                So far I feel the story has pretty good pacing. It is a bit slow in the beginning, where we are introduced to the village and its residents. But I personally think it was fine, even in the slow parts. A lot of backstory is introduced which really builds up the world around you. Even as someone who knows nothing about the world, the book throws many new terms at you, which residents of the world would know, but it doesn’t feel overwhelming. I really enjoyed building up the world around the pieces of information the book feeds you a bit at a time.
+                <br>
+                It’s a good book so far. 5/7 perfect score.
+                <br>
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="text-center">
+            <div id="disqus_thread"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center">
+    <div class="footer-above">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col col-md-4">
+                    <h3>RELEASE DATE</h3>
+                    <p>When you least expect it</p>
+                </div>
+                <div class="footer-col col-md-4">
+                    <h3>Other Pages</h3>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><span class="sr-only">Facebook</span><i class="fa fa-fw fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><span class="sr-only">Google Plus</span><i class="fa fa-fw fa-google-plus"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><span class="sr-only">Twitter</span><i class="fa fa-fw fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><span class="sr-only">Linked In</span><i class="fa fa-fw fa-linkedin"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><span class="sr-only">Dribble</span><i class="fa fa-fw fa-dribbble"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col col-md-4">
+                    <h3>About A42JS</h3>
+                    <p>We are a Group of Developers at UCSD, Dedicated to Creating the Best Games Ever Made</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    Copyright &copy; A42JS 2016
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+    <a class="btn btn-primary" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+</div>
+
+<!-- jQuery -->
+<script src="../vendor/jquery/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<!-- Theme JavaScript -->
+<script src="../js/main.js"></script>
+<script>
+    $('ul.nav li.dropdown').hover(function() {
+        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+    }, function() {
+        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+    });
+</script>
+<!--Disqus Comments-->
+<script>
+
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+     var disqus_config = function () {
+     this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+     };
+     */
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://cse125week7.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 </body>
+
 </html>
