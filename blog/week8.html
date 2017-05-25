@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Week 8</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="../css/main.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body id="page-top" class="index">
+<div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
+<!-- Navigation -->
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="#page-top">TEAM 4: A42JS</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#group-blog">Group Blog</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#blog">Blog</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#book-report">Book Report</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header>
+    <div class="container" id="maincontent" tabindex="-1">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>WEEK 8</h2>
+                <hr class="star-light">
+            </div>
+        </div>
+        <div class="row">
+            <img  class="img-responsive center-block" src="https://imgs.xkcd.com/comics/good_code.png">
+        </div>
+    </div>
+</header>
+<!-- Group Blog -->
+<section id="group-blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Group Blog</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <!--Place Screenshot Here-->
+        <div class="row">
+            <img  class="img-responsive center-block" src="../img/screenshots/Week7Screenshots.png">
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <p>
+                    Over the course of this week, we fixed up and integrated many of the features we were working on from last week. AI and decals have been merged in, the server serialization code was redone so that component data can be sent to clients (allowing the new gameplay features to work on the server side and allow us to optimize the amount of data we send [only variables that changed]), and the level loader now correctly imports transformations, hierarchy data, colliders, and even animations. As a result, we now have a level you can run around in as an actual character from the game.
+                    <br>
+                    For next week, we plan to get the later levels done with all their components wired up so that we can start demoing the game, while continuing to improve on our graphics, menus, and other features.
+                    <br>
+                </p>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+</section>
+<!--Blog-->
+<section id="blog" class="success">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Blog</h2>
+                <hr class="star-light">
+            </div>
+        </div>
+        <!--Alex Hawker-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Alex Hawker</h2>
+                    <p>
+                        For this week, I had planned to do SSAO, Crespular Rays, Foliage Rendering and perhaps a bit on Cloth Simulation. Instead, I pivoted my focus to the scene loader and animations. The scene loader now properly handles transforms and parenting (thank you to Stephen for his help figuring out the right rotation and tracking down a very elusive bug), components are able to be loaded properly, old loading methods were cleaned up, and we can more easily load in animations now (which also now have root motion!) Along the way, I made several optimizations to the graphics (e.g. fixed no stencil buffer for the point light speedup, avoided updating perspective matrix unnecessarily on FBO switch, etc.). I also fixed up decals (normals now work in all directions) and added some profiling code.
+                        <br>
+                        Goals for next week are to get to SSAO and hopefully Cloth Physics, add Animation Blending (smoothly play between two animations), and help with general polish. My morale is pretty high, as we actually have characters now and should be able to start testing over the course of next week!
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--Ara-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Ara Jermakyan</h2>
+                    <p>
+                        This past week’s improvements instantly surfaced the flaws of our communication between client and server. Any sort of transformation or event triggering on the server side had no real way of being activated on the client side, especially since the only real thing being sent over was the transform tree and player controls.
+                        This weeks goals were to tackle refactoring our communication protocols, and integrating all of our changes onto this new methodology. This new method involved sending deltas to specific objects that had updates.Before, the objects were only accessible through traversing the tree hierarchy; now we created an index table to allow direct access to update. In addition, we added a check to determine if a delta has been applied to each object to determine whether to serialize the data or not. This solved two problems: reducing the footprint of the tree (rather than sending transforms for a 100 objects of which 99 were unmoving, we will only send 1), and allowing direct access to the game objects. On top of these transforms, we enabled functionality to serialize each objects components. With this in place, any component that needs to be serialized can easily implement the necessary methods and automatically be included.
+                        With all of this in place, we needed to merge everyone’s code together. AI integrated seemlessly. Currently the branch with the scene loader has introduced some new bugs in terms of non-functioning gameplay, but the core basic movement still works in the client/server model.
+                        Due to timelining, we did not get enough time to completely merge this new branch for this week, and thus will be pushed to next week.
+                        Next week’s plans involves cleaning up any loose ends on client/server integration, and beginning to assist with component creation in Unity, so custom made components will automatically be available when the scene is loaded.
+                        <br>
+                        Seeing the game with all of its models/textures running with server/client integration was really the highlight of the week. Morale is very high.
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--Arno-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Arno Gao</h2>
+                    <p>
+                        What I did:
+                        Wrote in code to do animation states and have the object’s state reflect the animation’s (which indicate what is physically possible). Thought through a lot of the details and assumptions that are required for a state machine of this sort to accompany min time for animation and transitions between animations. As well as dealing with buffered state change requests and how an object is going to indicate it wants to change states. Turned out to be more complicated than first imagined. Was able to talk with Alex to build up the abstraction complexity to handle more cases. And then talked to Stephen to bring it back down to earth, only taking on what we need.
+                        <br>
+                        My unaccomplished goals:
+                        Did most of what I wanted to do.
+                        <br>
+                        My new hopes and dreams:
+                        Integrated it with how the current animations work and do some thorough testing
+                        <br>
+                        Morale:
+                        GOOD
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--Sunny-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Austin Sun</h2>
+                    <p>
+                        My goals for this week were to start revamping the sound engine and try and get it fixed on firefox as well as start working on more sound design. I continued to create more sounds for the game as well as starting to get them integrated into the demo to make sure its ready. Stephen recently presented me with a list of suggested sounds in order to let me get started on the more difficult time consuming sounds to make.
+                        <br>
+                        Due to the time crunch with finals and the end of the quarter on the horizon, it's really starting to get hurried. I'm feeling pretty good however and with grading out of the way I can start to contribute more on the gameplay aspect of the game and not just debugging and sound design.
+                        <br>
+                        This week my goals are to be able to get all the sounds for the game in by the weekend and get at least some temporary sounds in for everything so that we have a proper experience ready when we need to demo it and get testers. My morale is high and I'm starting to get really excited with how the game is progressing
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--ArtMan-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">John Pellag</h2>
+                    <p>
+                        Like last week, my goals for this week were scene building and modeling.  I was able to fully texture more characters and pull them into the scene pipeline (though one needs animation work).  I built one of the major “set pieces” for the game and continued helping build the level.
+                        <br>
+                        As I said last week, as we are approaching the the end of the quarter, there will be more pressure to build out the level and create these set pieces.  I’ve created one set piece will need to make two to four others (I’m fairly certain).  The pipeline is working well now and pulling my models is very straightforward.
+                        <br>
+                        This week, my goals are the same (and probably will be more-or-less the same for the rest of the quarter).  I’d like to see a more set pieces in the game by next week as well as all of the characters instead of all the same.  My morale is high and I’m getting excited to see where the final game is going.
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--JC-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Justin Chou</h2>
+                    <p>
+                        This past week we hoped to update and modify our existing server/client networking code to send not just the transforms of the game objects but also serialize and apply information of various components such as sounds and lights such that it can be synonymous across all clients as well as support specific client component triggering. This issue arose when trying to trigger a 2d sound for all clients to hear and we realized that it was not possible as we are not sending that info (the sound was technically triggered to play on just the server). In addition, we hoped to integrate as many gameplay changes with the server as possible.
+                        <br>
+                        We were able to revamp the way we were sending server/client data and am able to trigger specific events on client from server. This involved saving a dictionary of game objects indexed by their id’s on both server and client. Server would go through all the game objects and send only data that has changed. Furthermore, we integrated the other gameplay branches including AI and door events. We also worked to get a server game scene reload functionality but ran into many blockers/stack overflow errors that need to be resolved.
+                        <br>
+                        For next week, we hope to have server and event components integrated with the newly developed game loader. In addition, we hope to get familiar with unity so that we can create prefabs of our gameplay objects so that we can easily create new levels.
+                        <br>
+                        My morale is great. Seeing John’s assets and models load into our game was really amazing.
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--ST-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Stephen Trinh</h2>
+                    <p>
+                        My goals for this week were to get at least the layout of the first set piece done. I was also hopeful that we could’ve gotten in the gameplay/interactive bits in as well.
+                        <br>
+                        I was able to get the layout of the first set piece done. Most of the design ideas are in place, and all that’s left is to fill in the details, the most important of which being the maze parts and the enemy AI within it. In addition to the set piece, I also spent a considerable amount of time prettifying the intro level (level 0) with what assets John had already made. The rocks and pebbles make a real aesthetic difference, and I foresee the levels looking fantastic at the end (given enough time of course).
+                        <br>
+                        This week, I also worked on improving the camera. Since we’re gunning for a playable demo by the weekend, I figured we should have a semblance of the final camera in and ready to go. The camera’s now located about the right side of the player such that the player will always remain to the left of the center. I also added in the ability for the camera to react to the state of the player, so we can make it feel more visceral.
+                        <br>
+                        For the next week, I want to start working on the next set piece and get the coinciding AI for the first set piece and maybe the second.
+                        <br>
+                        I think we’re still making good progress and should have something pretty good lined up for the weekend. I’m still worried about getting the component scripts through our pipeline, since we need to have that resolved in order to not have to hard code in all the interactivity by hand. This is actually something I’m planning to get done by the week’s end. Overall, I’ll give this week a banana and an apple.
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="book-report">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <marquee><h1>Tim's Book Report</h1></marquee>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+            <p>
+                Just in case you actually care about spoilers of the end of the book, I’ll give my review first, then give a plot overview of the end afterwards in case you are too lazy to read the last 50 pages for yourself.
+                <br>
+                OVERALL REVIEW:
+                I really enjoyed the book. The background lore is extremely extensive, and reading the book and trying to piece it all together was very exciting. I remember when Alex first recommended the book, I think it was during a conversation where I mentioned I hated reading The Lord of the Rings, where we have a whole chapter dedicated to Frodo and the rest going up a mountain, then going back down, and nothing of significance happens, besides learning the fact that they can’t go over the mountain. It was a combination of nothing happening and being really boring to read that really annoyed me. However, with The Eye of the World, I didn’t feel any scene was pointless. Even that one scene where Rand fell into the palace I felt had a purpose. It introduced characters that I assume we will be seeing the sequels and added more backstory for Rand. Every scene was fun to read and felt like each one added to the story or built up background information. It was a very good book and I would recommend reading it in case you haven’t been too spoiled by me.
+                <br>
+                SPOILERS:
+                Our party leaves Fal Dara and heads into the Blight, searching for The Green Man who guards the Eye of the World. After being chased through the Blight by terrible creatures, they stumble upon the Green Man, a sort of being with the powers of nature. It is now revealed that the Eye of the World contains a pure form of saidin, the male portion of the True Source, that Aes Sedai of the past purified just in case it would be needed in the future. Shortly afterwards, two strange men arrive and attack our party, looking for Rand. They are the Forsaken, male Aes Sedai from the past, sealed away. The Green Man defeats one of them in a very nice piece of exposition describing the enemy’s body being consumed by fungus and other nature-y things. That was one my favorite parts of the book, the detail that was put into that scene was really fun to read. Anyways, the other forsaken was much more powerful, and Moiraine tried her best to hold him off, but to no avail. And now, Rand is cornered at a cliffside, in a very cliche scene, where he must now pull off some miracle to save himself or face certain defeat. And to no one’s surprise, Rand channels the One Power through the saidin in the Eye of the World to defeat the Forsaken, win a battle against the Dark One’s forces somewhere else, and deal a powerful blow to the Dark One himself. Then Rand decides to wander the world, afraid of his power. Oh, and Rand is probably the Dragon reborn or something, setting forth some prophecy of him saving the world.
+                <br>
+                One thing I found interesting about the end, is how the final scene sort of blurs together. The scene describing Rand channeling the True Source was a little vague on what he was actually doing. It was described as a shining rope that he reached out to. Then we are suddenly thrust upon a scene of a battle, where Rand turns the tide with some magic. Then he walks up some aetherial stairs, which leads him to the room he has seen before in his nightmares of the Dark One. The reader is left a little confused on what just happened since it all happens so fast, which matches what Rand understands of the situation.
+                <br>
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="text-center">
+            <div id="disqus_thread"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center">
+    <div class="footer-above">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col col-md-4">
+                    <h3>RELEASE DATE</h3>
+                    <p>When you least expect it</p>
+                </div>
+                <div class="footer-col col-md-4">
+                    <h3>Other Pages</h3>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><span class="sr-only">Facebook</span><i class="fa fa-fw fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><span class="sr-only">Google Plus</span><i class="fa fa-fw fa-google-plus"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><span class="sr-only">Twitter</span><i class="fa fa-fw fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><span class="sr-only">Linked In</span><i class="fa fa-fw fa-linkedin"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><span class="sr-only">Dribble</span><i class="fa fa-fw fa-dribbble"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col col-md-4">
+                    <h3>About A42JS</h3>
+                    <p>We are a Group of Developers at UCSD, Dedicated to Creating the Best Games Ever Made</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    Copyright &copy; A42JS 2016
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+    <a class="btn btn-primary" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+</div>
+
+<!-- jQuery -->
+<script src="../vendor/jquery/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<!-- Theme JavaScript -->
+<script src="../js/main.js"></script>
+<script>
+    $('ul.nav li.dropdown').hover(function() {
+        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+    }, function() {
+        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+    });
+</script>
+<!--Disqus Comments-->
+<script>
+
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+     var disqus_config = function () {
+     this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+     };
+     */
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://cse125week7.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</body>
+
+</html>
