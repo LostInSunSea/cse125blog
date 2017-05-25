@@ -133,14 +133,15 @@
                 <div class="col-sm-12">
                     <h2 class="text-center">Ara Jermakyan</h2>
                     <p>
-                        This past week’s improvements instantly surfaced the flaws of our communication between client and server. Any sort of transformation or event triggering on the server side had no real way of being activated on the client side, especially since the only real thing being sent over was the transform tree and player controls.
-                        This weeks goals were to tackle refactoring our communication protocols, and integrating all of our changes onto this new methodology. This new method involved sending deltas to specific objects that had updates.Before, the objects were only accessible through traversing the tree hierarchy; now we created an index table to allow direct access to update. In addition, we added a check to determine if a delta has been applied to each object to determine whether to serialize the data or not. This solved two problems: reducing the footprint of the tree (rather than sending transforms for a 100 objects of which 99 were unmoving, we will only send 1), and allowing direct access to the game objects. On top of these transforms, we enabled functionality to serialize each objects components. With this in place, any component that needs to be serialized can easily implement the necessary methods and automatically be included.
-                        With all of this in place, we needed to merge everyone’s code together. AI integrated seemlessly. Currently the branch with the scene loader has introduced some new bugs in terms of non-functioning gameplay, but the core basic movement still works in the client/server model.
-                        Due to timelining, we did not get enough time to completely merge this new branch for this week, and thus will be pushed to next week.
-                        Next week’s plans involves cleaning up any loose ends on client/server integration, and beginning to assist with component creation in Unity, so custom made components will automatically be available when the scene is loaded.
+                        The goals for this week were business as usual: server integration and helping out with other tasks. We implemented some cool features  regarding gameplay mechanics. This included have statues that mimic the singing functionality of the players, and even move towards the player, as well as adding in checkpoint functionality for player deaths.
                         <br>
-                        Seeing the game with all of its models/textures running with server/client integration was really the highlight of the week. Morale is very high.
+                        Server integration proved to be tricky as always, as we again overhauled some functionalities. We added in capability for multiple events, both to be assigned to a gameobject and to the various switches we have. We also updated the way we serialize player output: previously we had custom serialization in place, but we migrated the serialization to the new method introduced last week. This helped build in some abstraction for the statue and players when it came to functionality and serialization. Lastly, the Audio engine was overhauled this week, so we simply tweaked the portions that were needed to maintain communication and functionality with the server/client.
                         <br>
+                        One aspect not tested was the gameplay mechanic for moving platforms: theoretically they are in the game, but we did not test it fully due to other outstanding tasks as well my inability to render anything other than a teapot (Not a graphics person! :p). Also, while server/client communication is working well, we need to extensively test multiplayer. Our main focus has been getting the game to work in single player mode for client/server, and multiplayer is something that is in the back of our minds.
+                        <br>
+                        Going into next week,it is starting to be crunch time. Our tasks will most likely again be focused on ensuring everything works with backend while helping anyone else with tasks they need.
+                        <br>
+                        Morale is good, and anticipating great things into this next week.
                     </p>
                 </div>
             </div>
@@ -204,13 +205,15 @@
                 <div class="col-sm-12">
                     <h2 class="text-center">Justin Chou</h2>
                     <p>
-                        This past week we hoped to update and modify our existing server/client networking code to send not just the transforms of the game objects but also serialize and apply information of various components such as sounds and lights such that it can be synonymous across all clients as well as support specific client component triggering. This issue arose when trying to trigger a 2d sound for all clients to hear and we realized that it was not possible as we are not sending that info (the sound was technically triggered to play on just the server). In addition, we hoped to integrate as many gameplay changes with the server as possible.
+                        The goals for the past week were to work towards having our first level built out for the game. We hoped to develop any gameplay elements necessary to make it happen. A couple off the top of my head include platforms and checkpoints. In addition, the goal of incorporating whatever is being worked on by everyone else into networking and the server is always present.
                         <br>
-                        We were able to revamp the way we were sending server/client data and am able to trigger specific events on client from server. This involved saving a dictionary of game objects indexed by their id’s on both server and client. Server would go through all the game objects and send only data that has changed. Furthermore, we integrated the other gameplay branches including AI and door events. We also worked to get a server game scene reload functionality but ran into many blockers/stack overflow errors that need to be resolved.
+                        For this past week we continued to work on server integration with all the features coming in from the various branches. Specifically, we merged in some camera fixes as well as the rewritten audio engine. In regards to gameplay, we implemented singing statues, moving statues, checkpoints, and moving platforms. All have been integrated with the server.
                         <br>
-                        For next week, we hope to have server and event components integrated with the newly developed game loader. In addition, we hope to get familiar with unity so that we can create prefabs of our gameplay objects so that we can easily create new levels.
+                        There were a couple issues that we came across with testing the platforms. Due to our lack of knowledge of the rendering portion of game we were not able to test with the correct colliders. We just simulated trying to stand on a teapot while we elevated it. For the most part it worked but we need to tweak some things with how bouncy the collisions are.
                         <br>
-                        My morale is great. Seeing John’s assets and models load into our game was really amazing.
+                        For next week we are waiting for the pipeline to come into play especially the linking of components in unity and importing into our game. I feel some stuff would mess up and we should tackle and resolve this as soon as possible. We will continue and work on integration and keep everything working together.
+                        <br>
+                        My morale is good, the game is coming together and starting to look really great. We are almost there.
                         <br>
                     </p>
                 </div>
