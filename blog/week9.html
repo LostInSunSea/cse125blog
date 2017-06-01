@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Week 8</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="../css/main.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body id="page-top" class="index">
+<div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
+<!-- Navigation -->
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="#page-top">TEAM 4: A42JS</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#group-blog">Group Blog</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#blog">Blog</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#book-report">Book Report</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header>
+    <div class="container" id="maincontent" tabindex="-1">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>WEEK 9</h2>
+                <hr class="star-light">
+            </div>
+        </div>
+        <div class="row">
+            <img  class="img-responsive center-block" src="https://www.explainxkcd.com/wiki/images/e/e2/estimating_time.png">
+        </div>
+    </div>
+</header>
+<!-- Group Blog -->
+<section id="group-blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Group Blog</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <!--Place Screenshot Here-->
+        <div class="row">
+            <img  class="img-responsive center-block" src="../img/screenshots/Week8Screenshots.png">
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <p>
+			This week we spent a lot of time getting our game ready to demo this weekend at the Triton Gaming Expo, and, with perhaps another day of intergrating and polishing, we should be ready to go. Our levels are coming together, the gameplay code to interact with these levels is in place, our frame-rates are holding steady, switching animations (cleanly) is almost in, and we even managed to fix our audio issues!<br/>
+                    <br>
+                    We plan to fix up the game over the course of today and tomorrow to get it ready to demo, then work on expanding out new features (e.g. graphics) and more content (e.g. levels, models, sounds) over the bulk of the following week. <br/>
+                    <br>
+                </p>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+</section>
+<!--Blog-->
+<section id="blog" class="success">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Blog</h2>
+                <hr class="star-light">
+            </div>
+        </div>
+        <!--Alex Hawker-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Alex Hawker</h2>
+                    <p>
+                        For this week, I had planned to do SSAO, Cloth Simulation and Animation Blending. Instead, I ended up pushing these tasks back once again, this time to work on optimizing and improving the game's graphics engine (although I did manage to sneak animation blending in). This turned out to be very handy, as not only does the game run a lot faster now, but I was able to discover some bugs that had cropped up in our lighting code. With these fixed and the increased performance, we can now have point light shadows on every light, which, combine with the correct lighting, looks really cool! There's still a bit to go to further optimize it (e.g. Austin may look into frustum culling to speed up general rendering and dynamic point light shadows, like the ones on the players), but it's at a pretty good place for now (well, until I add some more graphics features to slow it back down :) ).<br/>
+                        <br>
+                        Goals for next week are to finally get to these features I want to do :)! First on the list is SSAO and updating the forward renderer for foliage, followed by Cloth Simulation & Multiple Environment Map Generation & Rendering (might enlist someone else too on these ones to spread out the work). Morale is pretty high, as the lighting looks really good now, and I'm excited with the new levels we're rolling out and demoing this weekend! 
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--Ara-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Ara Jermakyan</h2>
+                    <p>
+                        The goals for this week were business as usual: server integration and helping out with other tasks. We implemented some cool features  regarding gameplay mechanics. This included have statues that mimic the singing functionality of the players, and even move towards the player, as well as adding in checkpoint functionality for player deaths.
+                        <br>
+                        Server integration proved to be tricky as always, as we again overhauled some functionalities. We added in capability for multiple events, both to be assigned to a gameobject and to the various switches we have. We also updated the way we serialize player output: previously we had custom serialization in place, but we migrated the serialization to the new method introduced last week. This helped build in some abstraction for the statue and players when it came to functionality and serialization. Lastly, the Audio engine was overhauled this week, so we simply tweaked the portions that were needed to maintain communication and functionality with the server/client.
+                        <br>
+                        One aspect not tested was the gameplay mechanic for moving platforms: theoretically they are in the game, but we did not test it fully due to other outstanding tasks as well my inability to render anything other than a teapot (Not a graphics person! :p). Also, while server/client communication is working well, we need to extensively test multiplayer. Our main focus has been getting the game to work in single player mode for client/server, and multiplayer is something that is in the back of our minds.
+                        <br>
+                        Going into next week,it is starting to be crunch time. Our tasks will most likely again be focused on ensuring everything works with backend while helping anyone else with tasks they need.
+                        <br>
+                        Morale is good, and anticipating great things into this next week.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--Arno-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Arno Gao</h2>
+                    <p>
+What I did: <br/>
+Took a long time but I was able to plug in the animation states to the current engine. It took a while learning about the parts of the engine, where everything is located, loaded, hooked up, and run. I was able to make changes I felt were simple and intuitive (and I commented a lot along the way). I also helped a little with the js=> .... => js pipeline for our components. Its becoming more imperative that we finish this part.<br/>
+ <br/>
+My unaccomplished goals:<br/>
+Took too long<br/>
+ <br/>
+My new hopes and dreams: <br/>
+Making sure our build is stable and stays stable throughout the weekend for the showing.<br/>
+ <br/>
+Morale:<br/>
+7/10<br/>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--Sunny-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Austin Sun</h2>
+                    <p>
+                        My goals for this week were to implement the view frustum culling as well as debug the new sound engine rewrite for Ara and Justin
+                        <br>
+                        I'm almost done with the creation of the view frustum culling as well as some bug fixes here and there for the sound. The HTML5 Audio API has proven to be incredibly frustrating but I think I can get things done.
+                        <br>
+                        This week my goals are to get culling finished and work out a few kinks in the Audio. As well as helping out with the last of the game play code needed to run the game. I starting to feel the stress with coming finals but still feeling good overall.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--ArtMan-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">John Pellag</h2>
+                    <p>
+                        Like last week, my goals for this week were scene building and modeling.  I was able to fully texture more characters and pull them into the scene pipeline (though one needs animation work).  I built one of the major “set pieces” for the game and continued helping build the level.
+                        <br>
+                        As I said last week, as we are approaching the the end of the quarter, there will be more pressure to build out the level and create these set pieces.  I’ve created one set piece will need to make two to four others (I’m fairly certain).  The pipeline is working well now and pulling my models is very straightforward.
+                        <br>
+                        This week, my goals are the same (and probably will be more-or-less the same for the rest of the quarter).  I’d like to see a more set pieces in the game by next week as well as all of the characters instead of all the same.  My morale is high and I’m getting excited to see where the final game is going.
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--JC-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Justin Chou</h2>
+                    <p>
+                        The goals for the past week were to work towards having our first level built out for the game. We hoped to develop any gameplay elements necessary to make it happen. A couple off the top of my head include platforms and checkpoints. In addition, the goal of incorporating whatever is being worked on by everyone else into networking and the server is always present.
+                        <br>
+                        For this past week we continued to work on server integration with all the features coming in from the various branches. Specifically, we merged in some camera fixes as well as the rewritten audio engine. In regards to gameplay, we implemented singing statues, moving statues, checkpoints, and moving platforms. All have been integrated with the server.
+                        <br>
+                        There were a couple issues that we came across with testing the platforms. Due to our lack of knowledge of the rendering portion of game we were not able to test with the correct colliders. We just simulated trying to stand on a teapot while we elevated it. For the most part it worked but we need to tweak some things with how bouncy the collisions are.
+                        <br>
+                        For next week we are waiting for the pipeline to come into play especially the linking of components in unity and importing into our game. I feel some stuff would mess up and we should tackle and resolve this as soon as possible. We will continue and work on integration and keep everything working together.
+                        <br>
+                        My morale is good, the game is coming together and starting to look really great. We are almost there.
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--ST-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Stephen Trinh</h2>
+                    <p>
+                        My goals for this week were to get at least the layout of the first set piece done. I was also hopeful that we could’ve gotten in the gameplay/interactive bits in as well.
+                        <br>
+                        I was able to get the layout of the first set piece done. Most of the design ideas are in place, and all that’s left is to fill in the details, the most important of which being the maze parts and the enemy AI within it. In addition to the set piece, I also spent a considerable amount of time prettifying the intro level (level 0) with what assets John had already made. The rocks and pebbles make a real aesthetic difference, and I foresee the levels looking fantastic at the end (given enough time of course).
+                        <br>
+                        This week, I also worked on improving the camera. Since we’re gunning for a playable demo by the weekend, I figured we should have a semblance of the final camera in and ready to go. The camera’s now located about the right side of the player such that the player will always remain to the left of the center. I also added in the ability for the camera to react to the state of the player, so we can make it feel more visceral.
+                        <br>
+                        For the next week, I want to start working on the next set piece and get the coinciding AI for the first set piece and maybe the second.
+                        <br>
+                        I think we’re still making good progress and should have something pretty good lined up for the weekend. I’m still worried about getting the component scripts through our pipeline, since we need to have that resolved in order to not have to hard code in all the interactivity by hand. This is actually something I’m planning to get done by the week’s end. Overall, I’ll give this week a banana and an apple.
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="book-report">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <marquee><h1>Tim's Book Report</h1></marquee>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+            <p>
+                Coming Soon!!!
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="text-center">
+            <div id="disqus_thread"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center">
+    <div class="footer-above">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col col-md-4">
+                    <h3>RELEASE DATE</h3>
+                    <p>When you least expect it</p>
+                </div>
+                <div class="footer-col col-md-4">
+                    <h3>Other Pages</h3>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><span class="sr-only">Facebook</span><i class="fa fa-fw fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><span class="sr-only">Google Plus</span><i class="fa fa-fw fa-google-plus"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><span class="sr-only">Twitter</span><i class="fa fa-fw fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><span class="sr-only">Linked In</span><i class="fa fa-fw fa-linkedin"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><span class="sr-only">Dribble</span><i class="fa fa-fw fa-dribbble"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col col-md-4">
+                    <h3>About A42JS</h3>
+                    <p>We are a Group of Developers at UCSD, Dedicated to Creating the Best Games Ever Made</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    Copyright &copy; A42JS 2016
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+    <a class="btn btn-primary" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+</div>
+
+<!-- jQuery -->
+<script src="../vendor/jquery/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<!-- Theme JavaScript -->
+<script src="../js/main.js"></script>
+<script>
+    $('ul.nav li.dropdown').hover(function() {
+        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+    }, function() {
+        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+    });
+</script>
+<!--Disqus Comments-->
+<script>
+
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+     var disqus_config = function () {
+     this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+     };
+     */
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://cse125week7.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</body>
+
+</html>
