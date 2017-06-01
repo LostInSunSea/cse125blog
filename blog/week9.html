@@ -133,15 +133,16 @@
                 <div class="col-sm-12">
                     <h2 class="text-center">Ara Jermakyan</h2>
                     <p>
-                        The goals for this week were business as usual: server integration and helping out with other tasks. We implemented some cool features  regarding gameplay mechanics. This included have statues that mimic the singing functionality of the players, and even move towards the player, as well as adding in checkpoint functionality for player deaths.
+                        This weeks goals were to assist with whatever tasks are needed to be done, as well as server integration. Due to work unrelated to cse 125, Justin and I ended up missing our Friday meeting, as well as being limited throughout the weekend, and thus did not work on too much until Wednesday. Our main goals are server integration, fixing raycast, and allowing scene reloading.
                         <br>
-                        Server integration proved to be tricky as always, as we again overhauled some functionalities. We added in capability for multiple events, both to be assigned to a gameobject and to the various switches we have. We also updated the way we serialize player output: previously we had custom serialization in place, but we migrated the serialization to the new method introduced last week. This helped build in some abstraction for the statue and players when it came to functionality and serialization. Lastly, the Audio engine was overhauled this week, so we simply tweaked the portions that were needed to maintain communication and functionality with the server/client.
+                        With regards to raycasting, the main issue is that we do not control the camera on the server side, and thus any raycasts done by “looking” will have to originate from the player, not the camera. This means that we always raycast from the feet of the player. To combat this, we will send the camera position and forward vector on every frame, and simply use those values for the looking aspect.
                         <br>
-                        One aspect not tested was the gameplay mechanic for moving platforms: theoretically they are in the game, but we did not test it fully due to other outstanding tasks as well my inability to render anything other than a teapot (Not a graphics person! :p). Also, while server/client communication is working well, we need to extensively test multiplayer. Our main focus has been getting the game to work in single player mode for client/server, and multiplayer is something that is in the back of our minds.
+                        Server Integration, we got some new code to debug, and we are still going through it. Calculations on the server side work exactly the same as they do on client side only; transferring information from the server to the client works correctly, but the calculations needed for rendering seem to not be matching. Our assumption is that the client side physics seems to be affecting scene’s root, affecting all of our gameobjects. Updates will hopefully be prepared by the morning!
                         <br>
-                        Going into next week,it is starting to be crunch time. Our tasks will most likely again be focused on ensuring everything works with backend while helping anyone else with tasks they need.
+                        We have had issues with scene reloading in the past, as doing a full restart leaves some unattended pointers of some point. We did plan on getting some leeway on this, but due to integration issues, we will push this to friday.
                         <br>
-                        Morale is good, and anticipating great things into this next week.
+                        Goals for next week are simply to make the game work! Its our last chance to get the full game up and running. Morale is still steady, but definitely feeling the time pressure D:.
+                        <br>
                     </p>
                 </div>
             </div>
@@ -209,15 +210,13 @@
                 <div class="col-sm-12">
                     <h2 class="text-center">Justin Chou</h2>
                     <p>
-                        The goals for the past week were to work towards having our first level built out for the game. We hoped to develop any gameplay elements necessary to make it happen. A couple off the top of my head include platforms and checkpoints. In addition, the goal of incorporating whatever is being worked on by everyone else into networking and the server is always present.
+                        For this week the goals were to work on server integration, fixing issues with the raycast, and look into a way to create lobbies/reload the game. Not much was accomplished this week as Ara and I had a work related meeting resulting in our missing of Friday’s meeting. The Memorial day holiday also created a desire to relax so we did not have our usual Monday meeting either. The code from the various WIP branches have been merged into development so we will work hard tonight to get as much of it working with server as possible.
                         <br>
-                        For this past week we continued to work on server integration with all the features coming in from the various branches. Specifically, we merged in some camera fixes as well as the rewritten audio engine. In regards to gameplay, we implemented singing statues, moving statues, checkpoints, and moving platforms. All have been integrated with the server.
+                        We have started to debug the issues with the camera with networking and it seems that there is some sort of problem with the world positions not being added correctly. We have a feeling that some changes with the collider resulted in a slight restructure that we are not taking into account. Raycasting is a simple fix from what is occurring currently (raycasting from the feet of the player) to raycasting from the camera. We just need to serialize camera object positions solely for the purpose of client side raycast calculations.
                         <br>
-                        There were a couple issues that we came across with testing the platforms. Due to our lack of knowledge of the rendering portion of game we were not able to test with the correct colliders. We just simulated trying to stand on a teapot while we elevated it. For the most part it worked but we need to tweak some things with how bouncy the collisions are.
+                        For this final stretch we will work to get the game as close to done as possible, ironing out issues with networking, and hopefully get lobbies/multiple games working. We will continue to integrate with the server for our final push.
                         <br>
-                        For next week we are waiting for the pipeline to come into play especially the linking of components in unity and importing into our game. I feel some stuff would mess up and we should tackle and resolve this as soon as possible. We will continue and work on integration and keep everything working together.
-                        <br>
-                        My morale is good, the game is coming together and starting to look really great. We are almost there.
+                        My moral is good, ready to bring it home. Bring home the bacon.
                         <br>
                     </p>
                 </div>
