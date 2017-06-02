@@ -116,15 +116,14 @@
                 <div class="col-sm-12">
                     <h2 class="text-center">Alex Hawker</h2>
                     <p>
-                        Nulla vehicula ultricies aliquam. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Integer efficitur enim lacus, vitae
-                        pretium neque tempus eu. Vestibulum eu est ac ante vulputate elementum.
-                        Nullam non diam fermentum, posuere turpis eu, vehicula turpis. Suspendisse
-                        nunc dui, vehicula sit amet accumsan sed, pellentesque maximus turpis.
-                        Suspendisse aliquet, ipsum non lacinia aliquam, tortor risus hendrerit lorem,
-                        ac ullamcorper diam nunc volutpat dui. Ut malesuada at metus in facilisis.
-                        Curabitur viverra maximus diam vitae fermentum. Pellentesque viverra tellus et ante ultricies,
-                        a lobortis arcu mollis.
+                        This week my goal was to start getting the graphics engine back on schedule by implementing Point Light Shadows, Particle Systems, Deferred Decals, and SSAO.
+                        <br>
+                        While I didn’t manage to get to SSAO, I managed to get all the other features working! They could still use some fine tuning and extra functionality (e.g. aliasing issues on shadows at max distance), but this will be better to tweak once we have the final level geometry in place. Plus, managed to fix a few old issues.
+                        <br>
+                        Goals for next week are to get SSAO done, as well as Crespular Rays and Foliage Rendering (which most likely will be just tweaking the normals for leaves). Ideally, it would also be great if I could get some time to start on cloth simulation.
+                        <br>
+                        Morale is pretty good right now for this week.
+                        <br>
                     </p>
                 </div>
             </div>
@@ -135,15 +134,17 @@
                 <div class="col-sm-12">
                     <h2 class="text-center">Ara Jermakyan</h2>
                     <p>
-                        Nulla vehicula ultricies aliquam. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Integer efficitur enim lacus, vitae
-                        pretium neque tempus eu. Vestibulum eu est ac ante vulputate elementum.
-                        Nullam non diam fermentum, posuere turpis eu, vehicula turpis. Suspendisse
-                        nunc dui, vehicula sit amet accumsan sed, pellentesque maximus turpis.
-                        Suspendisse aliquet, ipsum non lacinia aliquam, tortor risus hendrerit lorem,
-                        ac ullamcorper diam nunc volutpat dui. Ut malesuada at metus in facilisis.
-                        Curabitur viverra maximus diam vitae fermentum. Pellentesque viverra tellus et ante ultricies,
-                        a lobortis arcu mollis.
+                        This week, we set out to help out the team in implementing functionality in different areas since the backend is more or less done.
+                        <br>
+                        We ended up working on basic gameplay mechanics that allow basic events to occur, such as picking up a key, unlocking a door, opening a door, healing a player, and creating win conditions.
+                        <br>
+                        The main problem we had here was simply creating a nice abstraction that will allow easy generation of these events and triggers. After discussion, we settled on creating three types of generic switches: trigger-based, singing-based, and raytrace-based. These can be added to any gameobject, and will refer to an Event; the Event will be customized to suit the situation, as seen in DoorEvent and KeyEvent.
+                        <br>
+                        We set up a very basic demonstration of the newly created gameplay, including a win condition, solely on the client side. Once we began integrating with the backend, many problems suddenly became apparent. Code that is to be triggered only on the client is only initiated on the backend. The biggest issue here is playing sound effects when special Events have occurred. Another issue is the transfer of data. We were currently sending the entire hierarchy and applying the changes in the order of the game objects. Once we started removing objects from within hierarchy, this caused transforms to be applied to the wrong objects.
+                        <br>
+                        We have thought up of some ways to remedy the situation, such as creating a finite state machine based flow for the audio, and sending only the deltas from the server to the clients. Regardless this will be our main tasks leading up into the next week: update our server/client communication flow to meet new requirements and continue the integration of all the features.
+                        <br>
+                        Despite having lots of problems on integration, it was extremely satisfying to create the small demo with the sound effects. Morale is very high.
                     </p>
                 </div>
             </div>
@@ -154,15 +155,18 @@
                 <div class="col-sm-12">
                     <h2 class="text-center">Arno Gao</h2>
                     <p>
-                        Nulla vehicula ultricies aliquam. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Integer efficitur enim lacus, vitae
-                        pretium neque tempus eu. Vestibulum eu est ac ante vulputate elementum.
-                        Nullam non diam fermentum, posuere turpis eu, vehicula turpis. Suspendisse
-                        nunc dui, vehicula sit amet accumsan sed, pellentesque maximus turpis.
-                        Suspendisse aliquet, ipsum non lacinia aliquam, tortor risus hendrerit lorem,
-                        ac ullamcorper diam nunc volutpat dui. Ut malesuada at metus in facilisis.
-                        Curabitur viverra maximus diam vitae fermentum. Pellentesque viverra tellus et ante ultricies,
-                        a lobortis arcu mollis.
+                        What I did:
+                        After some iterations the loader and js to c# compiler are completed. Tested it on one of our scenes and the output seems to look pretty good. Hopefully we’ll be able to actually get the models after some time. Planned out how we’ll be doing animation and animation states.
+                        <br>
+                        My unaccomplished goals:
+                        Actually doing writing in some animation handling code. First I have to better understand the current code though. Also, did not get to ask much about gameplay code.
+                        <br>
+                        My new hopes and dreams:
+                        Work on integrating animations states.
+                        <br>
+                        Morale:
+                        An solid but tired OK
+                        <br>
                     </p>
                 </div>
             </div>
@@ -205,15 +209,14 @@
                 <div class="col-sm-12">
                     <h2 class="text-center">Justin Chou</h2>
                     <p>
-                        Nulla vehicula ultricies aliquam. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Integer efficitur enim lacus, vitae
-                        pretium neque tempus eu. Vestibulum eu est ac ante vulputate elementum.
-                        Nullam non diam fermentum, posuere turpis eu, vehicula turpis. Suspendisse
-                        nunc dui, vehicula sit amet accumsan sed, pellentesque maximus turpis.
-                        Suspendisse aliquet, ipsum non lacinia aliquam, tortor risus hendrerit lorem,
-                        ac ullamcorper diam nunc volutpat dui. Ut malesuada at metus in facilisis.
-                        Curabitur viverra maximus diam vitae fermentum. Pellentesque viverra tellus et ante ultricies,
-                        a lobortis arcu mollis.
+                        For this week my goals were to help the team with gameplay code as well as support in massaging the server to integrate our client side and gameplay changes. Specifically we needed to implement our singing mechanism to open doors, create a representation of a key object that is able to interact with locked doors, healing items as well as an injured state for players, and creating a win condition.
+                        <br>
+                        We were able to accomplish most of the goals that we set out to do. Currently we still only have teapot meshes so we colored specific teapots to represent their actual game objects. For instance our red teapot represents the door, the green teapot is the key hole, the blue is the win trigger, the violet teapot is the healing item, and the small silver teapot is the key. We have abstracted out these events such that they can be attached and extended to other objects if we desire similar functionality.
+                        <br>
+                        The only hurdle that we have yet to cross is an issue with playing sounds on the clients in multiplayer mode. This has to do with certain events occurring on components only on the server and is not sent properly to the client. For next week, we plan to fix this bug which would require an overhaul of the way we are sending the scene between server and client. In addition, I hope to work more on additional gameplay elements.
+                        <br>
+                        My morale is great. I feel like the game is really starting to come along and that we can piece all of my work together and build the initial game prototype.
+                        <br>
                     </p>
                 </div>
             </div>
@@ -224,15 +227,18 @@
                 <div class="col-sm-12">
                     <h2 class="text-center">Stephen Trinh</h2>
                     <p>
-                        Nulla vehicula ultricies aliquam. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Integer efficitur enim lacus, vitae
-                        pretium neque tempus eu. Vestibulum eu est ac ante vulputate elementum.
-                        Nullam non diam fermentum, posuere turpis eu, vehicula turpis. Suspendisse
-                        nunc dui, vehicula sit amet accumsan sed, pellentesque maximus turpis.
-                        Suspendisse aliquet, ipsum non lacinia aliquam, tortor risus hendrerit lorem,
-                        ac ullamcorper diam nunc volutpat dui. Ut malesuada at metus in facilisis.
-                        Curabitur viverra maximus diam vitae fermentum. Pellentesque viverra tellus et ante ultricies,
-                        a lobortis arcu mollis.
+                        My goals for the week were to develop the AI and get the primary gameplay finished in order to meet our expectations for having an early alpha build for the user testing.
+                        <br>
+                        For the primary gameplay, I have passed that torch off to Ara and Justin to work on and have been helping them off and on. I did however work on making the camera controls better, namely the zooming which now moves smoothly instead of teleporting and the camera clipping which now properly moves off the normal of the surface it’s colliding with.
+                        <br>
+                        I did most of my work this week on AI, getting the pathfinding working as we have drawn it up. It took a little while, but the AI is now able to move to any point on the nav mesh using the ideal path. The way it works is that a leaf in the behavior tree will set a destination, another leaf will find the path to that destination, and the last leaf will receive the path and dynamically generate a sub-tree to move the AI each vertex along that path. To actually pass the data between the nodes in the tree, I have decided to make a map in the evil’s AI to contain the data that any node, with a reference to the AI, can grab.
+                        <br>
+                        I have spent some time this week mulling over the game design and trying to decipher some sort of methodology to creating our levels. The biggest question I had was: “how can I make a level, and in fact the game engaging for the players?”. Our entry point into the game’s design was to basically make a “labyrinth” for the players to make their way to the center of, but I really didn’t think it would be fun to be wandering around a complete maze trying to make heads or tails of it. This means that there’d be at least some kind of designed element to the maze. The conclusion I came to is to make the level contain a sequence of set pieces connected by maze-like corridors. The idea is that the set pieces would be self-contained areas that have cool and unique interactions for the players to engage in, while the maze-like corridors would retain some of the original gameplay ideas of being lost and separated with a hostile lurking about. Some more detail on the set pieces, they will each try to accentuate a different aspect of the original gameplay.
+                        <br>
+                        For next week, I want to continue developing the AI to make it more alike what I have in mind and to continue design work on the set pieces. Hopefully with a level laid out, it will make the AI that much easier to program.
+                        <br>
+                        I think that we are still making good headway, but I need to put in more time into design since most of the core gameplay code has more or less been implemented. I lost some of that time this weekend since I got sick, but I’m fairly confident I can make up for it. Overall, I’ll give this week some lemons and oranges and basically whatever has vitamin C.
+                        <br>
                     </p>
                 </div>
             </div>
