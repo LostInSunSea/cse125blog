@@ -1,0 +1,354 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Week 10</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="../css/main.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body id="page-top" class="index">
+<div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
+<!-- Navigation -->
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="../index.html">TEAM 4: A42JS</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#group-blog">Group Blog</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#blog">Blog</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#book-report">Book Report</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header>
+    <div class="container" id="maincontent" tabindex="-1">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>WEEK 10</h2>
+                <hr class="star-light">
+            </div>
+        </div>
+        <div class="row">
+            <img  class="img-responsive center-block" src="https://imgs.xkcd.com/comics/3x9.png" "title="Handy exam trick: when you know the answer but not the correct derivation, derive blindly forward from the givens and backward from the answer, and join the chains once the equations start looking similar. Sometimes the graders don't notice the seam.">
+        </div>
+    </div>
+</header>
+<!-- Group Blog -->
+<section id="group-blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Group Blog</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <!--Place Screenshot Here-->
+        <div class="row">
+            <img  class="img-responsive center-block" src="../img/screenshots/Week10Screenshots.png">
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <p>
+Over the last several weeks, a lot of work went into building infrastructure to build our game on. This finally paid off this week as we made heavy use of this foundation to start getting our actual game together. We now have a tutorial level done, with 2 gameplay levels being finalized. All four characters are in the game, and graphics are pretty much there. All that remains is to spend a day wrapping things up, polishing, and fixing any stray “features”. We’ve put in a lot of work and come a long way in these past 10 weeks, and are all really excited to show what we’ve done!
+                </p>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+</section>
+<!--Blog-->
+<section id="blog" class="success">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Blog</h2>
+                <hr class="star-light">
+            </div>
+        </div>
+        <!--Alex Hawker-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Alex Hawker</h2>
+                    <p>
+Well, here we are - the final stretch. I managed to get quite a few things done in as we try to prepare our game for the final demo, readjusting my plans to take on the highest priority items as has been the usual. This week, I made the importing / animation code more robust to get all of the characters in, added fog, cutout deferred shader (for transparent objects - should work better with effects (e.g. SSAO) and not have as much potential for problems as additional forward renderer), basic cloth “physics”, footsteps (and fixing decals to make these work) and a few other changes. While I did feel fairly productive this week, I hit a major roadblock with getting root rotation from animations that slowed me down a bit. My morale is a bit stressed, but excited for the demo.
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--Ara-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Ara Jermakyan</h2>
+                    <p>
+                        This weeks goals were to assist with whatever tasks are needed to be done, as well as server integration. Due to work unrelated to cse 125, Justin and I ended up missing our Friday meeting, as well as being limited throughout the weekend, and thus did not work on too much until Wednesday. Our main goals are server integration, fixing raycast, and allowing scene reloading.
+                        <br>
+                        With regards to raycasting, the main issue is that we do not control the camera on the server side, and thus any raycasts done by “looking” will have to originate from the player, not the camera. This means that we always raycast from the feet of the player. To combat this, we will send the camera position and forward vector on every frame, and simply use those values for the looking aspect.
+                        <br>
+                        Server Integration, we got some new code to debug, and we are still going through it. Calculations on the server side work exactly the same as they do on client side only; transferring information from the server to the client works correctly, but the calculations needed for rendering seem to not be matching. Our assumption is that the client side physics seems to be affecting scene’s root, affecting all of our gameobjects. Updates will hopefully be prepared by the morning!
+                        <br>
+                        We have had issues with scene reloading in the past, as doing a full restart leaves some unattended pointers of some point. We did plan on getting some leeway on this, but due to integration issues, we will push this to friday.
+                        <br>
+                        Goals for next week are simply to make the game work! Its our last chance to get the full game up and running. Morale is still steady, but definitely feeling the time pressure D:.
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--Arno-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Arno Gao</h2>
+                    <p>
+What I did: <br/>
+A lot of things touching up the ui that I dont remember everything. More animations are supported. Tutorials and triggers put in. Menu options to adjust lighting parameters too.  <br/>
+  <br/>
+My unaccomplished goals: <br/>
+I was just glad I got to put more time into the project. I can see that both Alex and Stephen put so much before into building this project that I didnt want to just sit back and let them handle things. I wish I had more time to learn about the parts they’re doing so I could contribute/help them with those as well. For now I just hope everything goes well into the presentation coming up soon. Our game looks pretty good, runs pretty smooth, and works pretty well. Its going to be exciting showing it off and talking about it. <br/>
+  <br/>
+My new hopes and dreams:  <br/>
+GLLLLLLLLLLLLLLL <br/>
+  <br/>
+Morale: <br/>
+Yay/10 <br/>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--Sunny-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Austin Sun</h2>
+                    <p>
+My goals for this week were to work on the AI as well as some View Frustum Culling<br/>
+ <br/>
+It’s been very hectic this week since I also have my only final on Saturday immediately after so I’ve been dividing my time among the two. It’s been an incredibly stressful week so far but I’ve been able to get a lot done over the last couple days and its been cool seeing everything come together.<br/>
+ <br/>
+Overall I’m having fun but it’s definitely starting to get stressful<br/>
+I’m pretty sure it’s Pellag, John.<br/>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--ArtMan-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">John Pellag</h2>
+                    <p>
+My goals for this week were to finish scene building and modeling.  I was able to help layout and decorate the levels and provide a lot of assets to decorate them.  I finished up the final character for the game and did some animation for him and the enemy.  <br/>
+ <br/>
+This week was pretty crazy as we’re pushing to finish the game.  Finalizing the levels has been really satisfying and everything is laying out nicely.  All of the characters look really nice in the game and I’m looking forward to seeing how people respond to them and the enemy.<br/>
+ <br/>
+Overall, I have really enjoyed this class.  I’ve done a lot of modeling and am happy to say I learned how to use some new tools (Marvelous Designer is awesome!!) and that I got to do so much art (instead of programming all the time).  The whole time, my morale has been high and I’m very excited to show what we’ve built on Friday! <br/>
+ <br/>
+P.S. My last name is “Pallag” Austin!!!<br/>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--JC-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Justin Chou</h2>
+                    <p>
+Our goals for this week were to implement the last few core gameplay elements such as “simon says” puzzle as well as rotating platforms. Server integration is always included as usual. In addition, we hoped to create a way to load/restart specific level from the server and have it trickle down to the client.<br/>
+ <br/>
+We were able to complete the “simon says” gameplay feature which will take any number of statues, have them sing in a particular order, and require the players to follow the order in order to trigger some event (probably a door opening). In addition, rotating platforms are in but need a little more massaging to get it to work with set thresholds using multiple statues. For instance, one statue rotates the platform ¼ of the way and players need to sing at all four statues for a full rotation. Level restart is functional but we need to put in additional work tonight to allow the server to pick specific levels to show the players.<br/>
+ <br/>
+For tonight we plan to iron out any bugs with the gameplay components as well as get the server/client level loading done. Tomorrow will be final incorporations, testing, and bug fixing.<br/>
+ <br/>
+This week has been really intense and am ready for the final push to get everything done.<br/>
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--ST-->
+        <div class="row">
+            <div class="person-text">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Stephen Trinh</h2>
+                    <p>
+My goals for this week were to finish making the levels.<br/>
+ <br/>
+The layout of the levels are basically complete. There are a few things still left to cram in at the end, namely hooking things up which won’t take too long. What will take time is the adding of details especially in the maze sections to help the player in learning the area quicker and get lost less often. There are still some gameplay code that needs to get integrated, but as far as gameplay features that need implementing, there are none left (crossing fingers).<br/>
+ <br/>
+For next week, I’m going to hibernate and spend some time enjoying some video games and a break.<br/>
+ <br/>
+Overall, I think this week has been pretty much a crunch, which seems to always be inevitable for week 10. It’s really nice to finally see everything coming together towards the end. Just praying that things will work out in the end. I’ll give the week the classic apple.<br/>
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="book-report">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <marquee><h1>Tim's Book Report</h1></marquee>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+            <p>
+I’m actually running out of content to write about. I could write about the articles I read about photon mapping and audio spatialization last week, but I don’t want to be reminded of how I still need to start those final projects. So I guess I’ll just talk about a variety of things. I’ve been tossing around the idea of writing a review for Nier:Automata (which is an amazing game by the way, go play it). Or perhaps music recommendations, since I remember Austin was joking around about how Jason should have a section of the blog where he recommends an album every week. But, I sort of want to at least end this series of book reports with at least some sort of literature, but I literally can’t think of anything to review. And I don’t want to write about another one of H.P. Lovecraft’s short stories. I’ve been sitting here looking at my computer screen for several minutes, trying to think of the last book I read for enjoyment. I guess technically the last time I drove up to Norcal, I listened to some Harry Potter audiobooks. So I could write about that. It was great background sound for the long and arduous journey on the I-5. There was a bit of nostalgia from my childhood. I find it almost hard to believe Harry Potter came out nearly 20 years ago, almost as old as me. Of course I didn’t read it until a few years later, but I did remember enjoying when I first read it. So that was a nice trip down memory lane. Now that I think about it, I did read quite a few books as a child, most of it was due to school assignments requiring reading, but as least they were fun to read, unlike the very dry and boring articles I read for my GE’s in college. I remember reading the Artemis Fowl series, the Alex Rider series, the Edge Chronicles, and a bunch of others I’m probably forgetting. Anyways, loading up Harry Potter to listen to for an 8 hour drive to the bay area was a great decision. Way better than my decision to listen to an audiobook for Lolita for the return trip back to San Diego. Although in its defense, despite its less than savory topics, it is very well written. Its prose is very dense, but something about it is alluring. And even though we know the main character is a terrible person, there is almost a morbid curiosity to learn more about the inner machinations of his mind. Unfortunately, since most of my focus was on the road, most of it was lost on me, and I had almost no idea what was going on. Also, I wasn’t able to finish it since I arrived at my destination first. But I will probably finish listening to it one day. I’m not sure when, because after the experience of driving for way too long in one day, I think I’m going to start flying to visit my parent.<br/>
+ <br/>
+Well, this has been a fun quarter. Even though this started as a joke, I had fun writing these. The Eye of the World is a good book, go read it. I’ll probably order the rest of the Wheel of Time series off amazon one day. Maybe next year, when I’m actually taking CSE 125, but at that point, I think I will have more important things to work on, like the actual class. I’ll just get another member of VGDC to write another silly series of blog posts. I hope you have enjoyed reading this pointless corner of the blog, and I’ll see you again next year.<br/>
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="text-center">
+            <div id="disqus_thread"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center">
+    <div class="footer-above">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col col-md-4">
+                    <h3>RELEASE DATE</h3>
+                    <p>When you least expect it</p>
+                </div>
+                <div class="footer-col col-md-4">
+                    <h3>Other Pages</h3>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><span class="sr-only">Facebook</span><i class="fa fa-fw fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><span class="sr-only">Google Plus</span><i class="fa fa-fw fa-google-plus"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><span class="sr-only">Twitter</span><i class="fa fa-fw fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><span class="sr-only">Linked In</span><i class="fa fa-fw fa-linkedin"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><span class="sr-only">Dribble</span><i class="fa fa-fw fa-dribbble"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col col-md-4">
+                    <h3>About A42JS</h3>
+                    <p>We are a Group of Developers at UCSD, Dedicated to Creating the Best Games Ever Made</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    Copyright &copy; A42JS 2016
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+    <a class="btn btn-primary" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+</div>
+
+<!-- jQuery -->
+<script src="../vendor/jquery/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<!-- Theme JavaScript -->
+<script src="../js/main.js"></script>
+<script>
+    $('ul.nav li.dropdown').hover(function() {
+        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+    }, function() {
+        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+    });
+</script>
+<!--Disqus Comments-->
+<script>
+
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+     var disqus_config = function () {
+     this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+     };
+     */
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://cse125week7.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</body>
+
+</html>
