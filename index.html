@@ -303,6 +303,261 @@ Coming Soon!</h3>
 <!-- About Section -->
 <section id="About">
     <h1 class="text-center"><a>FINAL REPORT</a></h1>
+    <div class="container">
+        <!--Question 1-->
+        <h3>Game concept: How and why did your game concept change from initial concept to what you implemented?</h3>
+        <p>
+            [ST]: Surprisingly, our game concept did not change too much from the initial concept to what we had implemented. We cut a few things like having a unique interaction per voice in order to cut development time, but all the ‘Must Haves’ that we had set out to implement in the beginning we implemented. However, it turns out that at the end, we still ran out of time to integrate a rather important part of our design which was the enemy AI, something we had implemented but couldn’t get it in in time.
+            <br><br>
+            [AH]: I think our game concept was pretty consistent throughout the project - we were going for a horror-esque game focusing on exploring a temple with the use of magical songs.  While we didn’t implement all of the things we were aiming for, we kept very close to this vision and I think managed to produce something quite similar to it, if with more horror “vibes” than gameplay due to lacking the enemy.
+            <br><br>
+            [AS]: I thought that our game concept had some minor changes but the core of the game was kept intact. I felt thematically we almost had less of a pure horror game like we discussed before and more of a thriller but that may probably be due to the lack of some features making it into our demo build
+            <br><br><br>
+        </p>
+        <!--Question 2-->
+        <h3>Design: How does your final project design compare to the initial design, and what are the reasons for the differences, if any?</h3>
+        <p>
+            [AG]: To me, I thought we had a pretty fun and interactive design to start with. However, as the quarter progressed, it became more and more evident that the polish we needed to make such a game work was not going to be in place. The end result was a subset of what we wanted, that we joke about as a walking simulator.
+            <br><br>
+            [AH]: I think in terms of game mechanics, we missed the mark on a few of them, if just because of how long it took to get a lot of the foundational things in. As a result, while we really started to pick up at the end after we managed to get the whole pipeline in place, we didn’t have enough time to fully flesh out the design.
+            <br><br>
+            [AJ]: The actual gameplay was probably the biggest difference from initial design to final implementation. The Multiplayer Functionality begin one of the core pieces of the project, had a lot of issues based in networking, which only truly showed its inefficiencies at the end. This caused severe lag, and even inability to run on the actual demo computers. Thus this severely stunted what was envisioned, and limited exactly what could be shown.
+            <br><br>
+            [JC] Our final project design differed a bit from our initial vision. We dreamed big hoping to have AI incorporated with all the gameplay elements fleshed out and ready to go but due to time constraints as well as the amount of time it took to get out pipeline in place, implementing and incorporating the different gameplay elements proved to be a challenge.
+            <br><br>
+            [AS] Functionality is probably the biggest difference from our plans to reality. We spent a long time building an incredibly robust game engine but that meant having less time being able to implement more features as well as the fact that we were incredibly ambitious with our initial design docs.
+            <br><br><br>
+        </p>
+        <!--Question 2-->
+        <h3>Schedule: How does your final schedule compare with your projected schedule, and what are the reasons for the differences, if any? (You should be able to glean this from your status reports.)</h3>
+        <p>
+            [AG]: A lot of people, myself included, ended up more busy than expected, especially when we started having to merge code worked on by different people (in my opinion our biggest speed bump was “making sure it all works together”). Our projection was very optimistic. I can only assume if the stars aligned and world harmony was achieved that we could have stuck reasonably to that schedule.
+            <br><br>
+            [ST]: Our final schedule was definitely off the mark with our projected schedule due to our decision to use Unity as our level editor. It wasn’t something we planned for in the beginning, and it took several weeks to complete. In the meantime, it became a blocker for getting an MVP out and slowed our development time down. On the bright side, it sped up time spent doing content creation at the end of the quarter. Was the return good enough? I want to say probably.
+            <br><br>
+            [AH]: Our final schedule ended up looking a bit different from our projected schedule. The graphics engine foundation took an extra week, and then got further delayed due to gameplay tasks requiring higher priority (although, due to planning in some blank weeks, managed to get most of it in still). Gameplay goals should have been more concrete, and it felt like we got stuck for a long time in a state of “gameplay should be ready soon!”, but it took a lot longer due to needing to get a) the gameplay interaction code and b) the Unity importer and c) the Unity level itself all setup. Networking, Modeling, and Audio were for the most part all on or ahead of time (although we never did get a chance to do client side prediction), so definitely some good work there!
+            <br><br>
+            [AJ] With regards to scheduling, we started off great, and knocked out a good portion of our projections. However, just like the Pareto principle, the last 20% is what really took the most time. For us, the integration phase was probably what set us behind. Integration between client side and server side would usually take a few hours each night, and due to some bottlenecks, some aspects would not be tested in a production environment until the very end, specifically Networking in my case.
+            <br><br>
+            [JC] Scheduling I feel started out really well with concrete tasks for everyone to do. We were ironing out tasks week by week and merging development branches every Wednesday. I feel that once people started having midterms as well as illnesses it became increasingly difficult to get our schedule back on track. However, we all made do with these obstacles and did our best to deliver whatever tasks were needed to be completed.
+            <br><br><br>
+        </p>
+        <!--Question 2-->
+        <h2 class="text-center">General Questions</h2>
+        <br><br>
+        <h3>What software methodology and group mechanics decisions worked out well, and which ones did not? Why?</h3>
+        <p>
+        [AG]: Siloing at the beginning got things rolling pretty fast. However in my opinion, having one person whose majority responsibility would be to organize what to implement and coordinate features would have been really really useful. For a team of this size, having a PM could actually speed things up. Because after the initial roll out, it looked like it got harder to put things together. Requirements changed among different parts of the codebase, and learning other people’s code always felt unnecessarily time consuming. I think our tacit solution ended up being to expose each part we created as the most simple “api” we could think of with ease of use in mind. And because everyone had solid programming skills, this worked out pretty okay.
+        <br><br>
+        [AH]: I think the decision to meet 3 - 5 days a week in person was really good, as it helped with communication and kept people focused on the project. While we were pretty good about it, I think we could have made things more modular / less dependence on subsystems. Finally, I really should have gotten Node setup on my computer and all non-networking people’s computers from the get-go, as, while we did thoroughly test client-side impacts of our codes, sometimes they had unintentional network side effects which Justin and Ara had to catch :( .
+            <br><br>
+        [AJ] The daily scrums and constant contact really solidified our understanding of requirements, so I felt those were the most useful. One interesting aspect that did work well initially was the ability for people to develop client side code separately from server side. This sped up everyone without having a dependency on the server, but it also meant there would be constant server integration issues on every pull request. It would have been a great idea to get an easy pipeline going and have everyone contribute to the backend code so the multiplayer aspect can be constantly tested rather than once a week.
+            <br><br>
+        [JC] Our stand up meetings were a really great decision which I felt helped everyone understand what the current progress is and additionally what the plans for the following week were. In addition, utilizing version control software to its fullest allowed our large team to most effectively work together. I think that since the goal is to deliver a minimum viable product using an agile methodology is very appropriate as we constantly have to make changes and adapt to the challenges for new features.
+            <br><br>
+        [AS] I think that our decision to meet often and early kept us in check a lot and allowed us to be on the same track. It also allowed us to more easily get help from each other and let us communicate with everyone else. While it did lead to some headaches at the end version control was really helpful and it allowed for us to pretty rapidly add things into the game. I think that our biggest issue was not making it easier to update the code on the server, it didn’t quite work once people were writing code client side, and not always testing on some network level.
+            <br><br><br>
+        </p>
+        <!--Question 2-->
+        <h3>Which aspects of the implementation were more difficult than you expected, and which were easier? Why?</h3>
+        <p>
+            [AG]: One of my parts, the Animation Graph, ended up being more difficult than expected because it mimics a common state machine problem -- multiple state readers and writers with implicit conditions meant to change states. I was working with React as a side thing at the time so I put a little of their ideology in my implementation. I thought it was pretty cool, albeit magical looking.
+            <br><br>
+            [AH]: I thought point light shadows would be a bit challenging, but I didn’t expect the strange performance / WebGL crash bugs that resulted from it. Optimization took a while, and towards the end of the project, even simple things started to take much longer than they seemed they should take (might also be a result of decreasing sleep).
+            <br><br>
+            [AJ] Networking was extremely easy, due in part by the library we chose. What was probably the most difficult was getting the game engine code to run on the backend. The code is made specifically for a client, not a node project, and converting each one of these files would take too much time and too much maintenence. We found a solution which essentially evaluates each file within the same context that javascript is running, but this took a while to get running. The restart game functionality was another aspect that really took a while, since the GameEngine was made as a singleton, and thus spawning multiple instances was not possible. We ended up getting it to work near week 9, but it was a bit too late to get it in as an actual feature.
+            <br><br>
+            [JC] Porting over the client side code to get it running on the server proved to be a very unexpected challenge. Ara and I worked to essentially evaluate the client side GameEngine code to get it to play nice with Express. This was necessary to be able to hold all of the logic on the server. Initial networking was extremely simple due to the use of Socket.io but we definitely need to do more optimizations to get the game running smoothly over the network. Furthermore, physics was pretty simple as well because of Cannon.js.
+            <br><br>
+            [AS] Sound was the bane of my existence, with something always going wrong and nothing quite working the way I expected it. While I always managed to get it working in one setting or another, I would inevitably run into some issue with the audio whether for one reason or the other. Also firefox was another major issue where sound just refused to work. AI was actually really easy to get major fixes for and was simpler than i imagined.
+            <br><br><br>
+        </p>
+        <!--Question 2-->
+        <h3>Which aspects of the project are you particularly proud of? Why?</h3>
+        <p>
+            [AG]: Reeaaaally solid work by Alex with graphics. And equally impressive work by Stephen and John with level design and game assets.
+            <br><br>
+            [AH]: I’m really happy with how the graphics turned out - while it took a lot of effort: John’s amazing models, Stephen for building the majority of the Unity Scenes, Arno’s animation graphs, building the graphics renderer, getting it all networked, etc., I think it turned out fantastic. I’m also really happy with how the dynamic footsteps turned out [we dynamically calculate when a player takes a step for footstep audio and graphical effects] as there were some doubts if it would even work and I think it adds a fair amount to the atmosphere.
+            <br><br>
+            [ST]: I’m really proud of our engine in general. I was honestly surprised how robust some of it was and how reusable it is, from our Unity pipeline to the networking to the graphics. Even though I worked on some of the C# to JS of our pipe, it was really magical how we could use Unity to pseudo-apply our scripts and create our levels. The networking Ara and Justin made held up surprisingly well (with a few hiccups regarding the demo computers) despite the heavy load due to the number of physics objects there were in the world. The art assets that John (visual) and Austin (audio) made were fantastic, the animation graph from Arno turned out really great and better than I expected, and the graphics baby of Alex was certainly amazing.
+            <br><br>
+            [AJ] The entire game engine look amazing. I think everything from the art to the sound really contributed to the atmosphere that was in Stephen’s vision. But I think the underrated part that no one will see from a demo is the extensive pipeline that was created to get the assets and level design integrated into the engine. As someone who likes infrastructure, this was an awesome tool.
+            <br><br>
+            [JC] I felt that the audio which Austin created/recorded was really great. It really added to the overall atmosphere of the game. As so much of our game is focused around sound it would make sense that this is one of our strongest aspects. The magic and hacks that Ara and I did to get Networking/Server working was insane as well.
+            <br><br><br>
+        </p>
+        <!--Question 2-->
+        <h3>What was the most difficult software problem you faced, and how did you overcome it (if you did)?</h3>
+        <p>
+            [AG]: Working in unfamiliar code. It took a while learning what calls who, when. I think the best way to overcome this is with nice naming, which we had. So it didnt take as long as it could have to understand how the game is run from start to serve to load to finish.
+            <br><br>
+            [AJ] The most difficult software problem we faced was that our code did run on the demo machines. We used the basement computer and spun up multiple instances of our server to make it work. Other than that, there were no true software problems that were out of the norm, especially since I was constantly pair programming with Justin, and we always asked the group if something interesting came up.
+            <br><br>
+            [JC] Another difficult software problem was the lack of documentation involved with Cannon.js especially in regards to its raycast function. Where the function parameters were extremely vague as to what it was looking for. Specifically whether it was taking a vector for direction and distance like in Unity or literally a endpoint. Turns out it was the latter. It took very long to debug this issue as we did not have an effective means to debug our raycasting.
+            <br><br>
+            [AS] The lack of good documentation of our sound engine and attempting to rig something together that wasn’t meant for games to work for our purposes. Another major code issue was just the performance drop from computer to computer. Something that ran perfectly in testing suddenly was no longer performant. While we were able to get performance fairly optimized at the end, we still needed to run the servers out of the basement rather than in the room.
+            <br><br><br>
+        </p>
+        <!--Question 2-->
+        <h3>If you used an implementation language other than C++, describe the environments, libraries, and tools you used to support development in that language. What issues did you run into when developing in that language? Would you recommend groups use the language in the future? If so, how would you recommend groups best proceed to make it as straightforward as possible to use the language? And what should groups avoid?</h3>
+        <p>
+            [AG]: For JS, linters. Pls. And we should’ve used Browserify (or Webpack) for module-like behavior. Miraculously, I didn’t see any problems related to importing.
+            <br><br>
+            [AH]: Sorry in advance - this answer is a bit long! We used Javascript (ES6) for the majority of our code. For the most part, it was really nice:
+            <br><br>
+            >no need for compilation (quick test iterations)
+            <br>
+            >can run commands right in the console (handy for debugging / checking or changing values)
+            <br>
+            >very powerful UI build right in (html/css/js)
+            <br>
+            >WebGL prints most of its errors for you, no need for glError().
+            <br>
+            >Fairly high level programming language, so programming in it can be pretty fast.
+            <br>
+            >Can use Node, so same client/server code [C++ has this too, but worth mentioning as it helps for a consistent format & client side prediction if going that route]
+            <br>
+            >runs in the browser, so can deploy easily (really nice for afterwards)
+            <br><br>
+            However, it did come with its fair share of problems:<br>
+            > There’s a story about how brakes are added to a car so you can go faster. While programming with dynamic typing can be fast (no overhead of setting up new types / containers to pass around), not having the safety of static typing can lead to bugs that take much longer to solve. These are especially prevalent due to vector math with no operator overloading - had several bugs from doing abc = vec + vec rather than vec3.add(abc, vec, vec), as javascript will silently give NaN, and you need to track down which instruction caused the NaN. While (in most cases) this didn’t take toooo long, a static compile check would be much faster.<br>
+            > WebGL still lacks several nice features desktop OpenGL has (hardware PCF for shadows was one main one, also think there was an issue with needing readPixels on webGL? Also no DMA). Furthermore, all of our phones didn’t support WebGL 2.0 (mainly due to no support for MRTs (basically required for Deferred) ) - so something worth keeping in mind if trying to target that platform (which we didn’t).<br>
+            <br>
+            Libraries we used:
+            glMatrix - Vec, Quat, and Matrix Math - I think it handled everything pretty well.
+            Cannon.js - Physics - I think it would have turned out better had we used ammo.js, which is the direct port of bullet into javascript, as cannon.js (hand-written version) seemed to have some issues / inconsistencies and didn’t always work right.
+            Node.js - don’t know if this counts, but for running the server
+            <br>
+            Used Webstorm as our development environment, which I thought worked really well.
+            <br>
+            I think it worked out really well for Javascript and WebGL - it was really nice not to need to setup libraries and be able to deploy without even downloading (let alone compiling) anything. If I were to change anything, it would be to use TypeScript (to solve the dynamic typing issue) and ammo.js for our physics engine.
+            <br><br><br>
+        </p>
+        <h3>How many lines of code did you write for your project? (Do not include code you did not write, such as library source.) Use any convenient mechanism for counting, but state how you counted.</h3>
+        <p>
+            We used github to count both:
+            <br>
+            Backend: 1099 Additions; 559 deletions
+            Client: Over 200,000
+            <br><br><br>
+        </p>
+        <h3>In developing the media content for your project, you relied upon a number of tools ranging from the DirectX/OpenGL libraries to modeling software. And you likely did some troubleshooting to make it all work. So that students next year can benefit from what you learned, please detail your tool chain for modeling, exporting, and loading meshes, textures, and animations. Be specific about the tools and versions, any non-obvious steps you had to take to make it work (e.g., exporting from the tool in a specific manner), and any features or operations you specifically had to avoid — in other words, imagine that you were tutoring someone on how to use the toolchain you used to make it all work. Also, for the tools you did use, what is your opinion of them? Would you use them again, or look elsewhere?</h3>
+        <p>
+            [AG]: We ran a NodeJs server to make integration easy between frontend and backend. We wrote custom tooling to do: JS class definitions => C# Classes for Unity => JSON game scene => back to JS class instantiations. It made level design much much easier to use Unity as a level editor.
+            <br><br>
+            [JP]: Blender and Substance Painter were used to make most models.  We used a number of PBR materials from freepbr which is a fantastic (albeit limited) library of realistic tileable materials.  Marvelous Designer was used to make the character clothing.  It allows for cloth creation by drawing 2D patterns and stitching them in real-time 3D onto the character.  The environment modeling was done with modular building in mind.  Most of the objects fit well together.  Much of the heavy-lifting for the character modeling was done by the Manuel Bastioni add-on to Blender, the characters were then cleaned-up and re-textured for the game.
+            <br><br>
+            [AH]: Think John can talk more about the modeling stage, but just want to affirm that Blender and Substance Painter are both fantastic pieces of software.
+
+            For importing the actual models, we had two pipelines: One for getting the scene into the game, and the other for the assets themselves.
+
+            For the scene, we used Arno’s code to automatically generate c# classes to fill with data in Unity. We then loaded & positioned all the meshes in there & gave them data. Then, we ran the exporter script, which generated a JSON representation of the scene our engine could import. Our importer then ran over this JSON, creating objects and mapping different tags to different components that object needed to initialize.
+
+            For the meshes themselves, we wrote a python script to automate running them through Assimp2Json, which converted the model files (e.g. *.fbx) into a json representation of what Assimp would give when reading that file. This made them really easy to use, as we could use similar code to how we would handle the objects in C++. The Python script was also supposed to run all the textures through ImageMagik to format them properly, but due to several constraints this didn’t happen and I ended up doing most of them by hand.
+            <br><br>
+            [JC] I know John really liked Marvelous Designer for making clothing.
+            <br><br><br>
+        </p>
+        <h3>Would you have rather started with a game engine or would you still prefer to work from scratch?</h3>
+        <p>
+            [AH]: It was fun to work from scratch, and I enjoyed doing the graphics, but I think, in terms of actually making a game, we could have done a whole lot more using something like Unity (we essentially spent 7 weeks or so building our own runtime player for a Unity scene). On the other hand, part of the reason we went with WebGL is that (last time I tried it), Unity still doesn’t have the best WebGL player, so there is some merit in making a WebGL game engine from scratch.
+            <br><br>
+            [ST]: I think this really depends on the group. I enjoyed working on it from scratch probably because our group in particular worked out really well, as everyone already specialized in developing a specific part of the game. For instance, Austin worked on the audio, Alex on the graphics, and Ara and Justin on the networking. We had very capable people who knew what they wanted to do and how to go about doing it. I think that for a group that isn’t as fortunate as we were, it would be highly beneficial to have a pre-built engine that can supplement the areas in which the group is lacking.
+            <br><br>
+            [AJ] I personally liked working from scratch, especially since I have 0 experience when it comes to graphics or game related engines. I learned a lot from each of my team members, and I think this really helped gain a new perspective on these types of engines. If the project instead had been to build a marketable game within 10 weeks, then re-inventing the wheel would not have been the right choice here.
+            <br><br>
+            [AS] While I would’ve prefered to work on it using an engine, as that would’ve allowed us to get things done quicker, it was still incredibly fun to work on it from scratch and see the progression of the game from nothing, to something simple. I remember that one of the most fun things we did with our game was quite early on where John and I were playing teapot soccer and moments like that wouldn’t have appeared I think had we been using an engine.
+            <br><br><br>
+        </p>
+        <h3>For those who used a networking library (e.g., RakNet or Boost), a physics library (e.g., Bullet), or a GUI library, would you use it again if you were starting over knowing what you know now? Describe any lessons you learned using it (problems that you had to troubleshoot and how you addressed them) for future groups who may use it. If you did not use a library, judging from the experiences of the groups that did, would you have used it in retrospect?</h3>
+        <p>
+            [AH]: I think using a physics library is essential and would definitely do it again. While I might’ve used a different one (e.g. ammo.js), being able to have rotated bounding box collisions was really important, especially since we imported the collision data from what we setup in Unity, and manually writing that code would easily take weeks. Furthermore, doing it this way allows us to add in some fun physics features (e.g. we had a spinning platform we almost had ready) that we could have done with more time.
+            <br><br>
+            [ST]: Using glMatrix to do our matrix math was sometimes a blessing but also a teeny nightmare. It was nice that we didn’t have to write most of the functions, but, through no fault of its own, suffered from the inability of JavaScript to do operator and function overloading. To top it off, the physics engine we used had vector 3’s as objects where you can access the x, y, z fields by doing .x, .y, and .z, but the glMatrix’s vector 3’s used float32 arrays of size 3 where x was at index 0, y at 1, and z at 2. This wasn’t really that bad but caused a headache for everyone who wanted to get involved.
+            <br><br>
+            [JC] Using Socket.io really simplified networking. It supported WebSocket (which we used) as well as AJAX Long-Polling. The simplification through Socket.io’s API’s made making these connections a breeze. Sending and receiving events was so easy.
+            <br><br>
+            [AJ] Socket.io was awesome, and made things very simple. A couple things to watch out for in the future is just to be aware of the asynchronous nature of this library, and that manual synchronizations are sometimes needed. Other than that, it's relatively straightforward.
+            <br><br><br>
+        </p>
+        <h3>What lessons about group dynamics did you learn about working in such a large group over an extended period of time on a challenging project?</h3>
+        <p>
+            [ST]: I think the biggest lesson to take away is to meet and work together often. I feel very fortunate that everyone was able to work together in the labs as often as we did. It made debugging a lot less painful and smoothed the process of integration since at any given time most of us knew what everyone else was doing and how they were implementing it. Another huge benefit to meeting so frequently was that whenever we made a design decision regarding code (or even coming up with an implementation), it was quick and easy to do sanity checks and confirm that it was our best choice.
+            <br><br>
+            [AG]: If we took time to break down features into stories, I would’ve had a much easier time contributing. Overall we had a lot of communication that made it less necessary.
+            <br><br>
+            [AJ]: Meet often and have a good process. We had a really great git control process, where we would pull request, code review, and allow one person control the main branches. Towards the end, this got a bit hectic, as we were branching off of branches and sometimes commit unstable builds onto dev by accident. But our meeting frequency really minimized the repercussions of our mistakes. Meeting often minimizes mistakes, but if this is not possible, then a process needs to be in place.
+            <br><br>
+            [JC]: Our group worked really well together and the meeting three times a week averaging four hours a day really got us together working and getting to know one another. I learned first hand the value of stand up meetings in getting everyone up to speed. One lesson that I felt was made apparent is the importance of a solid pipeline as soon as possible. As the pipeline is what will be used to bring all the features and components together into a deployable form it is of utmost importance it is of utmost importance to get it ironed out early.
+            <br><br><br>
+        </p>
+        <h3>Looking back over the past 10 weeks, how would you do things differently, and what would you do again in the same situation?</h3>
+        <p>
+            [AG]: We didnt merge enough at the beginning. Maintain a stable build.
+            <br><br>
+            [ST]: I think we should’ve focused more on pushing out an MVP as fast as we could. The way things went at the end, with things not being able to make it to the final build, could have been avoided by cutting features that we knew wouldn’t have time to make it in or by integrating features more quickly. For example, we didn’t have an actual level for our game until about week 9.
+            <br><br>
+            I feel that I would do some of the same things again in the same situation (given the MVP discussion). Over time, to a bit of my dismay, our focus became more on creating an engine than a game. And if I were to measure our success by what our engine is versus what our game is, I would say that we were very successful.
+            <br><br>
+            [AJ] A couple things I would do differently: contribute more to client side code, and have server integration capability for everyone. Contribution to client side would have enabled us to understand the engine at a better rate, and be more productive early on, rather than later on, which is what occurred to me. Having everyone have the server code would have let everyone develop with the server in mind, and actually free us up to help out the other team members with new features or optimizations.
+            <br><br>
+            I would continue the same mentality as I had this time: integrate first, then add new features. I lagged on getting some gameplay code at some times in favor of fixing issues that arose to make multiplayer work, which helped achieve stable builds.
+            <br><br>
+            [JC] Once again, the pipeline I cannot emphasize enough the importance of a solid pipeline. The more solid the pipeline the smoother the development process. We would have been able to push out a minimum viable product faster and with less headache. With that said I should have helped with the pipeline more when I saw that it was lagging. In regards to what I would do the same, I would not have chosen any other group to work with. All my teammates were great and I learned so much from them.
+            <br><br>
+            [AS] I think a big one was just making to sure to have a stable build more often and to work more on gameplay code earlier. Everyone was focussed on having something or the other feature implemented but due to time and lack of testing we weren’t able to put it into our final build.
+            <br><br><br>
+        </p>
+        <h3>Which courses at UCSD do you think best prepared you for CSE 125?</h3>
+        <p>
+            [AG]: All the open ended or low skeleton code project classes: 110 (Gillespie), 120, 123, 124, 150 (Cottrel), 170, 190 (Cottrell)
+            <br><br>
+            [AH]: I think the courses that most prepared me for CSE 125 were the graphics classes: e.g. CSE 167, 190 (now 163), and 169, as they both teach you applicable techniques for this class specifically, as well as giving you involved projects to gain practice on. CSE 165 is also great for giving Unity experience for those unfamiliar, and because VR applications (i.e. what you work on in the class) are pretty much the same as games, just with a different interface.
+            <br><br>
+            [ST]: CSE 120, 123, 165, and 167. 120 helped prepare me for tough, complicated problems in computer science. 123 did a bit of that and helped me understand networking to a degree where I knew how to implement it somewhat and, in our case, ways to help optimize it. 165 was great at teaching the workflow of game development, especially since we were able to use Unity in it. 167 helped me understand Alex when he’d start talking about graphics.
+            <br><br>
+            [JC]: I feel like the graphics classes would have helped tremendously with how graphics intensive games are. However, this does not answer the question. Out of the classes I have taken CSE110 and CSE112 with their emphasis on software engineering have been very helpful in just the process in which we developed our game.
+            <br><br>
+            [AS] 110,112,167,165,150 were all really helpful to me with everything I’ve done. 110,112 helped as references to me as to how software teams could work and what might work with our team. 167 was good so that while I’m not as good at graphics as alex, it did allow me to help and contribute at the end and that I understood what was going on.
+            <br><br><br>
+        </p>
+        <h3>What were the most valuable things that you learned in the class?</h3>
+        <p>
+            [AJ] How to make a game engine! Also gained perspective from game design, sound design, and model design, which I would never have found in any other class.  Also friendship and teamwork will take you far. (:
+            <br><br>
+            [JC] I think just understanding the way that games are structured (the flow of the whole thing) is a really valuable thing to have learned. WIth this knowledge I can now more easily pursue my long time dream of creating my own game in the future. What I learned in this course in regards to the game engine and game objects + components really translated easily to Unity which I had to work with recently. I was able to get all the concepts and just had to translate it to how Unity wanted it.
+            <br><br>
+            [AS]: How to spell John's name properly. Its PALLAG right :)
+            <br><br>
+            [ST]: Probably the most valuable thing that I developed in this class is some mental fortitude. It’s really easy to get bogged down by setbacks and unexpected problems over the course of the quarter, and things like that can quickly add up. What I learned is to stay focused on the next thing and to stay together as a group because, at the end, you’ll be needing everyone at a high level of focus to push through the finish line.
+            <br><br><br>
+        </p>
+        <h2 class="text-center">Final Comments</h2><br><br>
+        <h3>What books did you find helpful that were not on the recommended list but should be? What books were on the recommended list but were not useful and should be removed?</h3>
+        <p>
+            [AH]: Wheel of Time is a great book series (it’s my personal favorite) and I would recommend reading it.
+            <br><br>
+            [ST]: Game Engine Architecture by Jason Gregory was really helpful for me in understanding how engines are built and compartmentalized. It wasn’t a real direct help, but it did help in conceptualizing how one should go about building one from scratch.
+            <br><br><br>
+        </p>
+        <h3>I will be teaching this course next Spring. What advice/tips/suggestions would you give students who will take the course next year?</h3>
+        <div>
+            [AG]: A good way to split up responsibilities. And, as a resource, I was not too sure what kind of questions I could ask vs which ones I should look up. So I looked up everything.
+            <br><br>
+            [AJ] Get client-server communication up and running asap and integrated within the engine, as well as constantly test for it. Do lots of stress testing. And when possible, gain access to the actual demo machines and test there. We learned the hard way.
+            <br><br><br>
+        </div>
+        <h3>How can the course be improved for next year?</h3>
+        <p>
+            [JP]: I’d recommend trying to bring in someone to teach 3D modeling on a Tuesday and Thursday early on. <br>
+        </p>
+    </div>
+    <div class="text-center">
+        <br> <br> <br>
+        <h2>One last XKCD Comic for you</h2>
+        <p>For an example of how our git branches look like see primer</p>
+        <img class="center-block" src="https://imgs.xkcd.com/comics/movie_narrative_charts.png" class="img-responsive">
+    </div>
 </section>
 
 <!-- Footer -->
